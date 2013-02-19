@@ -5,11 +5,11 @@
 
 @interface ILAxisValuesLayerCalculator : NSObject
 
-@property (nonatomic, weak) ILAxisValuesLayer* valuesLayer;
+@property (nonatomic, weak) ILAxisValuesLayer *valuesLayer;
 
--(ILAxisValueState *)valueStateAtIndex:( NSUInteger )index_;
+- (ILAxisValueState *)valueStateAtIndex:(NSUInteger)index;
 
--(void)resetState;
--(void)refresh;
+- (void)resetState;
+- (void)refresh;
 
 @end

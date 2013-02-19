@@ -16,27 +16,27 @@ typedef enum
 
 @protocol ILAxisDelegate;
 
-@protocol ILAxis < NSObject >
+@protocol ILAxis <NSObject>
 
 @required
-@property ( nonatomic, weak ) id < ILAxisDelegate > delegate;
+@property (nonatomic, weak) id <ILAxisDelegate> delegate;
 
-@property ( nonatomic ) float size;
-@property ( nonatomic ) ILAxisOrientation orientation;
-@property ( nonatomic ) ILAxisGravity     gravity;
+@property (nonatomic) float size;
+@property (nonatomic) ILAxisOrientation orientation;
+@property (nonatomic) ILAxisGravity     gravity;
 
-@property ( nonatomic ) BOOL drawShortDelimiters;
+@property (nonatomic) BOOL drawShortDelimiters;
 
 @end
 
-@interface ILAxis : NSObject < ILAxis >
+@interface ILAxis : NSObject <ILAxis>
 
-@property ( nonatomic, weak ) id < ILAxisDelegate > delegate;
+@property (nonatomic, weak) id <ILAxisDelegate> delegate;
 
-@property ( nonatomic ) float size;
-@property ( nonatomic ) ILAxisOrientation orientation;
-@property ( nonatomic ) ILAxisGravity gravity;
+@property (nonatomic) float size;
+@property (nonatomic) ILAxisOrientation orientation;
+@property (nonatomic) ILAxisGravity     gravity;
 
-@property ( nonatomic ) BOOL drawShortDelimiters;
+@property (nonatomic) BOOL drawShortDelimiters;
 
 @end

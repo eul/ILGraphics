@@ -28,6 +28,10 @@
 		CEBBB49816D36E26009C9A0C /* ILRightVerticalAxisLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB48816D36E26009C9A0C /* ILRightVerticalAxisLayer.m */; };
 		CEBBB49916D36E26009C9A0C /* ILVerticalAxisLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB48A16D36E26009C9A0C /* ILVerticalAxisLayer.m */; };
 		CEBBB49A16D36E26009C9A0C /* ILAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB48C16D36E26009C9A0C /* ILAxis.m */; };
+		CEBBB4A716D36FFD009C9A0C /* CATextLayerCentered.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB49D16D36FFC009C9A0C /* CATextLayerCentered.m */; };
+		CEBBB4A816D36FFD009C9A0C /* ILBarsSeries+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4A016D36FFD009C9A0C /* ILBarsSeries+Private.m */; };
+		CEBBB4A916D36FFD009C9A0C /* ILLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4A416D36FFD009C9A0C /* ILLayer.m */; };
+		CEBBB4AA16D36FFD009C9A0C /* ILSeries+ChartLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4A616D36FFD009C9A0C /* ILSeries+ChartLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,16 @@
 		CEBBB48B16D36E26009C9A0C /* ILAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILAxis.h; sourceTree = "<group>"; };
 		CEBBB48C16D36E26009C9A0C /* ILAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILAxis.m; sourceTree = "<group>"; };
 		CEBBB48D16D36E26009C9A0C /* ILAxisDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILAxisDelegate.h; sourceTree = "<group>"; };
+		CEBBB49C16D36FFC009C9A0C /* CATextLayerCentered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATextLayerCentered.h; sourceTree = "<group>"; };
+		CEBBB49D16D36FFC009C9A0C /* CATextLayerCentered.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATextLayerCentered.m; sourceTree = "<group>"; };
+		CEBBB49F16D36FFD009C9A0C /* ILBarsSeries+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILBarsSeries+Private.h"; sourceTree = "<group>"; };
+		CEBBB4A016D36FFD009C9A0C /* ILBarsSeries+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILBarsSeries+Private.m"; sourceTree = "<group>"; };
+		CEBBB4A116D36FFD009C9A0C /* ILChartViewInternalDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILChartViewInternalDelegate.h; sourceTree = "<group>"; };
+		CEBBB4A216D36FFD009C9A0C /* ILInternalChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILInternalChartView.h; sourceTree = "<group>"; };
+		CEBBB4A316D36FFD009C9A0C /* ILLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILLayer.h; sourceTree = "<group>"; };
+		CEBBB4A416D36FFD009C9A0C /* ILLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILLayer.m; sourceTree = "<group>"; };
+		CEBBB4A516D36FFD009C9A0C /* ILSeries+ChartLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILSeries+ChartLayer.h"; sourceTree = "<group>"; };
+		CEBBB4A616D36FFD009C9A0C /* ILSeries+ChartLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILSeries+ChartLayer.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +164,8 @@
 		CEBBB44916D36D66009C9A0C /* ILCharts */ = {
 			isa = PBXGroup;
 			children = (
+				CEBBB49B16D36FFC009C9A0C /* CoreAnimationExtensions */,
+				CEBBB49E16D36FFC009C9A0C /* Details */,
 				CEBBB46F16D36E26009C9A0C /* Axis */,
 				CEBBB44C16D36D66009C9A0C /* ILCharts.h */,
 				CEBBB44A16D36D66009C9A0C /* Supporting Files */,
@@ -233,6 +249,30 @@
 				CEBBB47716D36E26009C9A0C /* ILVerticalAxisLayerCalculator.m */,
 			);
 			path = Calculations;
+			sourceTree = "<group>";
+		};
+		CEBBB49B16D36FFC009C9A0C /* CoreAnimationExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB49C16D36FFC009C9A0C /* CATextLayerCentered.h */,
+				CEBBB49D16D36FFC009C9A0C /* CATextLayerCentered.m */,
+			);
+			path = CoreAnimationExtensions;
+			sourceTree = "<group>";
+		};
+		CEBBB49E16D36FFC009C9A0C /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB49F16D36FFD009C9A0C /* ILBarsSeries+Private.h */,
+				CEBBB4A016D36FFD009C9A0C /* ILBarsSeries+Private.m */,
+				CEBBB4A116D36FFD009C9A0C /* ILChartViewInternalDelegate.h */,
+				CEBBB4A216D36FFD009C9A0C /* ILInternalChartView.h */,
+				CEBBB4A316D36FFD009C9A0C /* ILLayer.h */,
+				CEBBB4A416D36FFD009C9A0C /* ILLayer.m */,
+				CEBBB4A516D36FFD009C9A0C /* ILSeries+ChartLayer.h */,
+				CEBBB4A616D36FFD009C9A0C /* ILSeries+ChartLayer.m */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +386,10 @@
 				CEBBB49816D36E26009C9A0C /* ILRightVerticalAxisLayer.m in Sources */,
 				CEBBB49916D36E26009C9A0C /* ILVerticalAxisLayer.m in Sources */,
 				CEBBB49A16D36E26009C9A0C /* ILAxis.m in Sources */,
+				CEBBB4A716D36FFD009C9A0C /* CATextLayerCentered.m in Sources */,
+				CEBBB4A816D36FFD009C9A0C /* ILBarsSeries+Private.m in Sources */,
+				CEBBB4A916D36FFD009C9A0C /* ILLayer.m in Sources */,
+				CEBBB4AA16D36FFD009C9A0C /* ILSeries+ChartLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,50 +5,50 @@
 @protocol ILAxisDelegate <NSObject>
 
 @required
--(NSInteger)numberOfPointsForAxis:(ILAxis *)axis_;
+- (NSInteger)numberOfPointsForAxis:(ILAxis *)axis;
 
--(NSString*)axis:(ILAxis *)axis_
-labelTextForPoint:(NSInteger )point_;
+-( NSString *)axis:(ILAxis *)axis
+labelTextForPoint:(NSInteger)point;
 
 @optional
 /// Tap handling
 
--(void)axis:(ILAxis *)axis_
-didTapPoint:(CGPoint )point_
-    atIndex:(NSInteger )index_;
+- (void)axis:(ILAxis *)axis
+didTapPoint:(CGPoint)point
+    atIndex:(NSInteger)index;
 
 ///Offset methods
 
--(BOOL)useCenteredOffsetForAxis:(ILAxis *)axis_;
+- (BOOL)useCenteredOffsetForAxis:(ILAxis *)axis;
 
--(BOOL)useCenteredOffsetForValuesInAxis:(ILAxis *)axis_;
+- (BOOL)useCenteredOffsetForValuesInAxis:(ILAxis *)axis;
 
 ///Skin
 
--(CGFloat)labelsRotationAngleInDegreesForAxis:(ILAxis *)axis_;
+- (CGFloat)labelsRotationAngleInDegreesForAxis:(ILAxis *)axis;
 
--(UIColor*)colorForAxis:(ILAxis *)axis_;
+- (UIColor*)colorForAxis:(ILAxis *)axis;
 
--(CGFloat)widthForAxis:(ILAxis *)axis_;
+- (CGFloat)widthForAxis:(ILAxis *)axis;
 
--(UIColor*)backgroundColorForAxis:(ILAxis *)axis_;
+- (UIColor*)backgroundColorForAxis:(ILAxis *)axis;
 
--(UIColor*)shortDivisionsColorForAxis:(ILAxis *)axis_;
+- (UIColor*)shortDivisionsColorForAxis:(ILAxis *)axis;
 
--(CGFloat)shortDivisionsLengthForAxis:(ILAxis *)axis_;
+- (CGFloat)shortDivisionsLengthForAxis:(ILAxis *)axis;
 
--(CGFloat)shortDivisionsWidthForAxis:(ILAxis *)axis_;
+- (CGFloat)shortDivisionsWidthForAxis:(ILAxis *)axis;
 
--(CGFloat)bigDivisionsLengthForAxis:(ILAxis *)axis_;
+- (CGFloat)bigDivisionsLengthForAxis:(ILAxis *)axis;
 
--(CGFloat)bigDivisionsWidthForAxis:(ILAxis *)axis_;
+- (CGFloat)bigDivisionsWidthForAxis:(ILAxis *)axis;
 
--(UIColor*)bigDivisionsColorForAxis:(ILAxis *)axis_;
+- (UIColor *)bigDivisionsColorForAxis:(ILAxis *)axis;
 
--(UIFont*)axis:(ILAxis *)axis_
-fontForLabelAtPoint:(NSInteger )point_;
+- (UIFont *)axis:(ILAxis *)axis
+fontForLabelAtPoint:(NSInteger)point;
 
--(UIColor*)axis:(ILAxis *)axis_
-colorForLabelAtPoint:(NSInteger )point_;
+- (UIColor *)axis:(ILAxis *)axis
+colorForLabelAtPoint:(NSInteger)point;
 
 @end

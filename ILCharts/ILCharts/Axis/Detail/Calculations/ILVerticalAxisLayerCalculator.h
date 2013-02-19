@@ -4,20 +4,20 @@
 
 @interface ILVerticalAxisLayerCalculator : NSObject
 
-@property ( nonatomic, weak     ) ILVerticalAxisLayer * axisLayer;
-@property ( nonatomic           ) CGFloat               heightOffset;
-@property ( nonatomic           ) NSInteger             divisionsCount;
-@property ( nonatomic, readonly ) CGFloat               divisionsStep;
+@property (nonatomic, weak    ) ILVerticalAxisLayer *axisLayer;
+@property (nonatomic          ) CGFloat              heightOffset;
+@property (nonatomic          ) NSInteger            divisionsCount;
+@property (nonatomic, readonly) CGFloat              divisionsStep;
 
--(void)resetState;
+- (void)resetState;
 
--(BOOL)canDrawElementWithSize:( CGSize )elementSize_
-                  atYPosition:( CGFloat )yPosition_;
+- (BOOL)canDrawElementWithSize:(CGSize)elementSize
+                   atYPosition:(CGFloat)yPosition;
 
--(CGFloat)yPositionAtIndex:( NSUInteger )index_;
--(NSUInteger)indexByYPosition:( CGFloat )yPosition_;
+- (CGFloat)yPositionAtIndex:(NSUInteger)index;
+- (NSUInteger)indexByYPosition:(CGFloat)yPosition;
 
--(CGPoint)positionForValueAtIndex:( NSUInteger )index_
-                     withTextSize:( CGSize )textSize_;
+- (CGPoint)positionForValueAtIndex:(NSUInteger)index
+                      withTextSize:(CGSize)textSize;
 
 @end
