@@ -32,6 +32,22 @@
 		CEBBB4A816D36FFD009C9A0C /* ILBarsSeries+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4A016D36FFD009C9A0C /* ILBarsSeries+Private.m */; };
 		CEBBB4A916D36FFD009C9A0C /* ILLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4A416D36FFD009C9A0C /* ILLayer.m */; };
 		CEBBB4AA16D36FFD009C9A0C /* ILSeries+ChartLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4A616D36FFD009C9A0C /* ILSeries+ChartLayer.m */; };
+		CEBBB4EC16D3AC1E009C9A0C /* ILChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4C616D3AC13009C9A0C /* ILChartView.m */; };
+		CEBBB4ED16D3AC1E009C9A0C /* ILBarsSeriesCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4CB16D3AC1E009C9A0C /* ILBarsSeriesCalculator.mm */; };
+		CEBBB4EE16D3AC1E009C9A0C /* ILBarState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4CD16D3AC1E009C9A0C /* ILBarState.m */; };
+		CEBBB4EF16D3AC1E009C9A0C /* ILValuesContainerLayerCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4CF16D3AC1E009C9A0C /* ILValuesContainerLayerCalculator.m */; };
+		CEBBB4F016D3AC1E009C9A0C /* ILBarLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4D116D3AC1E009C9A0C /* ILBarLayer.mm */; };
+		CEBBB4F116D3AC1E009C9A0C /* ILBarsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4D316D3AC1E009C9A0C /* ILBarsBackgroundLayer.m */; };
+		CEBBB4F216D3AC1E009C9A0C /* ILBarsContainerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4D516D3AC1E009C9A0C /* ILBarsContainerLayer.m */; };
+		CEBBB4F316D3AC1E009C9A0C /* ILBarsGroupLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4D716D3AC1E009C9A0C /* ILBarsGroupLayer.m */; };
+		CEBBB4F416D3AC1E009C9A0C /* ILBarsSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4D916D3AC1E009C9A0C /* ILBarsSeries.m */; };
+		CEBBB4F516D3AC1E009C9A0C /* ILLineLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4DC16D3AC1E009C9A0C /* ILLineLayer.mm */; };
+		CEBBB4F616D3AC1E009C9A0C /* ILLineSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4DE16D3AC1E009C9A0C /* ILLineSeries.m */; };
+		CEBBB4F716D3AC1E009C9A0C /* ILPieSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4E116D3AC1E009C9A0C /* ILPieSeries.m */; };
+		CEBBB4F816D3AC1E009C9A0C /* ILSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4E416D3AC1E009C9A0C /* ILSeries.m */; };
+		CEBBB4F916D3AC1E009C9A0C /* ILValueLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4E616D3AC1E009C9A0C /* ILValueLayer.mm */; };
+		CEBBB4FA16D3AC1E009C9A0C /* ILValuesContainerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4E816D3AC1E009C9A0C /* ILValuesContainerLayer.m */; };
+		CEBBB4FB16D3AC1E009C9A0C /* ILValuesSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4EA16D3AC1E009C9A0C /* ILValuesSeries.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +123,42 @@
 		CEBBB4A416D36FFD009C9A0C /* ILLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILLayer.m; sourceTree = "<group>"; };
 		CEBBB4A516D36FFD009C9A0C /* ILSeries+ChartLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILSeries+ChartLayer.h"; sourceTree = "<group>"; };
 		CEBBB4A616D36FFD009C9A0C /* ILSeries+ChartLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILSeries+ChartLayer.m"; sourceTree = "<group>"; };
+		CEBBB4C516D3AC0E009C9A0C /* ILChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILChartView.h; sourceTree = "<group>"; };
+		CEBBB4C616D3AC13009C9A0C /* ILChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILChartView.m; sourceTree = "<group>"; };
+		CEBBB4CA16D3AC1E009C9A0C /* ILBarsSeriesCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarsSeriesCalculator.h; sourceTree = "<group>"; };
+		CEBBB4CB16D3AC1E009C9A0C /* ILBarsSeriesCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILBarsSeriesCalculator.mm; sourceTree = "<group>"; };
+		CEBBB4CC16D3AC1E009C9A0C /* ILBarState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarState.h; sourceTree = "<group>"; };
+		CEBBB4CD16D3AC1E009C9A0C /* ILBarState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILBarState.m; sourceTree = "<group>"; };
+		CEBBB4CE16D3AC1E009C9A0C /* ILValuesContainerLayerCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValuesContainerLayerCalculator.h; sourceTree = "<group>"; };
+		CEBBB4CF16D3AC1E009C9A0C /* ILValuesContainerLayerCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILValuesContainerLayerCalculator.m; sourceTree = "<group>"; };
+		CEBBB4D016D3AC1E009C9A0C /* ILBarLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarLayer.h; sourceTree = "<group>"; };
+		CEBBB4D116D3AC1E009C9A0C /* ILBarLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILBarLayer.mm; sourceTree = "<group>"; };
+		CEBBB4D216D3AC1E009C9A0C /* ILBarsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarsBackgroundLayer.h; sourceTree = "<group>"; };
+		CEBBB4D316D3AC1E009C9A0C /* ILBarsBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILBarsBackgroundLayer.m; sourceTree = "<group>"; };
+		CEBBB4D416D3AC1E009C9A0C /* ILBarsContainerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarsContainerLayer.h; sourceTree = "<group>"; };
+		CEBBB4D516D3AC1E009C9A0C /* ILBarsContainerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILBarsContainerLayer.m; sourceTree = "<group>"; };
+		CEBBB4D616D3AC1E009C9A0C /* ILBarsGroupLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarsGroupLayer.h; sourceTree = "<group>"; };
+		CEBBB4D716D3AC1E009C9A0C /* ILBarsGroupLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILBarsGroupLayer.m; sourceTree = "<group>"; };
+		CEBBB4D816D3AC1E009C9A0C /* ILBarsSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarsSeries.h; sourceTree = "<group>"; };
+		CEBBB4D916D3AC1E009C9A0C /* ILBarsSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILBarsSeries.m; sourceTree = "<group>"; };
+		CEBBB4DA16D3AC1E009C9A0C /* ILBarsSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarsSeriesDelegate.h; sourceTree = "<group>"; };
+		CEBBB4DB16D3AC1E009C9A0C /* ILLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILLineLayer.h; sourceTree = "<group>"; };
+		CEBBB4DC16D3AC1E009C9A0C /* ILLineLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILLineLayer.mm; sourceTree = "<group>"; };
+		CEBBB4DD16D3AC1E009C9A0C /* ILLineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILLineSeries.h; sourceTree = "<group>"; };
+		CEBBB4DE16D3AC1E009C9A0C /* ILLineSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILLineSeries.m; sourceTree = "<group>"; };
+		CEBBB4DF16D3AC1E009C9A0C /* ILLineSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILLineSeriesDelegate.h; sourceTree = "<group>"; };
+		CEBBB4E016D3AC1E009C9A0C /* ILPieSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILPieSeries.h; sourceTree = "<group>"; };
+		CEBBB4E116D3AC1E009C9A0C /* ILPieSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILPieSeries.m; sourceTree = "<group>"; };
+		CEBBB4E216D3AC1E009C9A0C /* ILPieSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILPieSeriesDelegate.h; sourceTree = "<group>"; };
+		CEBBB4E316D3AC1E009C9A0C /* ILSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSeries.h; sourceTree = "<group>"; };
+		CEBBB4E416D3AC1E009C9A0C /* ILSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSeries.m; sourceTree = "<group>"; };
+		CEBBB4E516D3AC1E009C9A0C /* ILValueLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValueLayer.h; sourceTree = "<group>"; };
+		CEBBB4E616D3AC1E009C9A0C /* ILValueLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILValueLayer.mm; sourceTree = "<group>"; };
+		CEBBB4E716D3AC1E009C9A0C /* ILValuesContainerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValuesContainerLayer.h; sourceTree = "<group>"; };
+		CEBBB4E816D3AC1E009C9A0C /* ILValuesContainerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILValuesContainerLayer.m; sourceTree = "<group>"; };
+		CEBBB4E916D3AC1E009C9A0C /* ILValuesSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValuesSeries.h; sourceTree = "<group>"; };
+		CEBBB4EA16D3AC1E009C9A0C /* ILValuesSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILValuesSeries.m; sourceTree = "<group>"; };
+		CEBBB4EB16D3AC1E009C9A0C /* ILValuesSeriesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValuesSeriesDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,9 +216,12 @@
 		CEBBB44916D36D66009C9A0C /* ILCharts */ = {
 			isa = PBXGroup;
 			children = (
+				CEBBB4C716D3AC18009C9A0C /* Series */,
 				CEBBB49B16D36FFC009C9A0C /* CoreAnimationExtensions */,
 				CEBBB49E16D36FFC009C9A0C /* Details */,
 				CEBBB46F16D36E26009C9A0C /* Axis */,
+				CEBBB4C516D3AC0E009C9A0C /* ILChartView.h */,
+				CEBBB4C616D3AC13009C9A0C /* ILChartView.m */,
 				CEBBB44C16D36D66009C9A0C /* ILCharts.h */,
 				CEBBB44A16D36D66009C9A0C /* Supporting Files */,
 			);
@@ -273,6 +328,63 @@
 				CEBBB4A616D36FFD009C9A0C /* ILSeries+ChartLayer.m */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		CEBBB4C716D3AC18009C9A0C /* Series */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB4C816D3AC1E009C9A0C /* Details */,
+				CEBBB4D016D3AC1E009C9A0C /* ILBarLayer.h */,
+				CEBBB4D116D3AC1E009C9A0C /* ILBarLayer.mm */,
+				CEBBB4D216D3AC1E009C9A0C /* ILBarsBackgroundLayer.h */,
+				CEBBB4D316D3AC1E009C9A0C /* ILBarsBackgroundLayer.m */,
+				CEBBB4D416D3AC1E009C9A0C /* ILBarsContainerLayer.h */,
+				CEBBB4D516D3AC1E009C9A0C /* ILBarsContainerLayer.m */,
+				CEBBB4D616D3AC1E009C9A0C /* ILBarsGroupLayer.h */,
+				CEBBB4D716D3AC1E009C9A0C /* ILBarsGroupLayer.m */,
+				CEBBB4D816D3AC1E009C9A0C /* ILBarsSeries.h */,
+				CEBBB4D916D3AC1E009C9A0C /* ILBarsSeries.m */,
+				CEBBB4DA16D3AC1E009C9A0C /* ILBarsSeriesDelegate.h */,
+				CEBBB4DB16D3AC1E009C9A0C /* ILLineLayer.h */,
+				CEBBB4DC16D3AC1E009C9A0C /* ILLineLayer.mm */,
+				CEBBB4DD16D3AC1E009C9A0C /* ILLineSeries.h */,
+				CEBBB4DE16D3AC1E009C9A0C /* ILLineSeries.m */,
+				CEBBB4DF16D3AC1E009C9A0C /* ILLineSeriesDelegate.h */,
+				CEBBB4E016D3AC1E009C9A0C /* ILPieSeries.h */,
+				CEBBB4E116D3AC1E009C9A0C /* ILPieSeries.m */,
+				CEBBB4E216D3AC1E009C9A0C /* ILPieSeriesDelegate.h */,
+				CEBBB4E316D3AC1E009C9A0C /* ILSeries.h */,
+				CEBBB4E416D3AC1E009C9A0C /* ILSeries.m */,
+				CEBBB4E516D3AC1E009C9A0C /* ILValueLayer.h */,
+				CEBBB4E616D3AC1E009C9A0C /* ILValueLayer.mm */,
+				CEBBB4E716D3AC1E009C9A0C /* ILValuesContainerLayer.h */,
+				CEBBB4E816D3AC1E009C9A0C /* ILValuesContainerLayer.m */,
+				CEBBB4E916D3AC1E009C9A0C /* ILValuesSeries.h */,
+				CEBBB4EA16D3AC1E009C9A0C /* ILValuesSeries.m */,
+				CEBBB4EB16D3AC1E009C9A0C /* ILValuesSeriesDataSource.h */,
+			);
+			path = Series;
+			sourceTree = "<group>";
+		};
+		CEBBB4C816D3AC1E009C9A0C /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB4C916D3AC1E009C9A0C /* Calculations */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		CEBBB4C916D3AC1E009C9A0C /* Calculations */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB4CA16D3AC1E009C9A0C /* ILBarsSeriesCalculator.h */,
+				CEBBB4CB16D3AC1E009C9A0C /* ILBarsSeriesCalculator.mm */,
+				CEBBB4CC16D3AC1E009C9A0C /* ILBarState.h */,
+				CEBBB4CD16D3AC1E009C9A0C /* ILBarState.m */,
+				CEBBB4CE16D3AC1E009C9A0C /* ILValuesContainerLayerCalculator.h */,
+				CEBBB4CF16D3AC1E009C9A0C /* ILValuesContainerLayerCalculator.m */,
+			);
+			path = Calculations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +502,22 @@
 				CEBBB4A816D36FFD009C9A0C /* ILBarsSeries+Private.m in Sources */,
 				CEBBB4A916D36FFD009C9A0C /* ILLayer.m in Sources */,
 				CEBBB4AA16D36FFD009C9A0C /* ILSeries+ChartLayer.m in Sources */,
+				CEBBB4EC16D3AC1E009C9A0C /* ILChartView.m in Sources */,
+				CEBBB4ED16D3AC1E009C9A0C /* ILBarsSeriesCalculator.mm in Sources */,
+				CEBBB4EE16D3AC1E009C9A0C /* ILBarState.m in Sources */,
+				CEBBB4EF16D3AC1E009C9A0C /* ILValuesContainerLayerCalculator.m in Sources */,
+				CEBBB4F016D3AC1E009C9A0C /* ILBarLayer.mm in Sources */,
+				CEBBB4F116D3AC1E009C9A0C /* ILBarsBackgroundLayer.m in Sources */,
+				CEBBB4F216D3AC1E009C9A0C /* ILBarsContainerLayer.m in Sources */,
+				CEBBB4F316D3AC1E009C9A0C /* ILBarsGroupLayer.m in Sources */,
+				CEBBB4F416D3AC1E009C9A0C /* ILBarsSeries.m in Sources */,
+				CEBBB4F516D3AC1E009C9A0C /* ILLineLayer.mm in Sources */,
+				CEBBB4F616D3AC1E009C9A0C /* ILLineSeries.m in Sources */,
+				CEBBB4F716D3AC1E009C9A0C /* ILPieSeries.m in Sources */,
+				CEBBB4F816D3AC1E009C9A0C /* ILSeries.m in Sources */,
+				CEBBB4F916D3AC1E009C9A0C /* ILValueLayer.mm in Sources */,
+				CEBBB4FA16D3AC1E009C9A0C /* ILValuesContainerLayer.m in Sources */,
+				CEBBB4FB16D3AC1E009C9A0C /* ILValuesSeries.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
