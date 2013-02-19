@@ -48,7 +48,7 @@
 {
     NSUInteger valueLayersCount = [self.calculator numberOfValues];
 
-    if (valueLayersCount_ > self.sublayers.count)
+    if (valueLayersCount > self.sublayers.count)
     {
         NSUInteger sublayersCount = self.sublayers.count;
         NSUInteger deltaCount = valueLayersCount - sublayersCount;

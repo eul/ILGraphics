@@ -46,7 +46,7 @@
 {
     [self.sublayers enumerateObjectsUsingBlock:^(ILBarLayer *barLayer, NSUInteger index, BOOL *stop)
     {
-        NSIndexPath *indexPath_ = [NSIndexPath indexPathForRow: (NSInteger)index inSection: (NSInteger)self.groupIndex];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow: (NSInteger)index inSection: (NSInteger)self.groupIndex];
 
         [barLayer setupWithBarState: [self.barsSeries.calculator stateForBarAtIndexPath: indexPath]
                            animated: self.scrolling ? NO : self->_useAnimation];

@@ -1,11 +1,11 @@
-#import <ILCharts/Series/ILSeries.h>
+#import "ILSeries.h"
 
 #import <Foundation/Foundation.h>
 
 @protocol ILLineSeriesDelegate;
 
-@interface ILLineSeries : NSObject <ILCSeries>
+@interface ILLineSeries : NSObject <ILSeries>
 
-@property (nonatomic, weak) id<SCLineSeriesDelegate> delegate;
+@property (nonatomic, weak) id<ILLineSeriesDelegate> delegate;
 
 @end

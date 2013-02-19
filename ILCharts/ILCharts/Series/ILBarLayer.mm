@@ -13,7 +13,7 @@ static const CGAffineTransform INVERT_Y_AND_ROTATE =
       0.f,  0.f  //1
 };
 
-@implementation SCBarLayer
+@implementation ILBarLayer
 
 @dynamic value, horizontal, showValue, valueText, fillColor;
 

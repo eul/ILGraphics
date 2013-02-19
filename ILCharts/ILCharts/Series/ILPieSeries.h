@@ -1,4 +1,4 @@
-#import <ILCharts/Series/ILSeries.h>
+#import "ILSeries.h"
 
 #import <Foundation/Foundation.h>
 

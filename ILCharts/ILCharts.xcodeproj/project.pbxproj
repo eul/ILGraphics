@@ -58,6 +58,48 @@
 			remoteGlobalIDString = CEBBB44316D36D66009C9A0C;
 			remoteInfo = ILCharts;
 		};
+		CEBBB50C16D3CC57009C9A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEBBB50716D3CC57009C9A0C /* JFFUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = JFFUI;
+		};
+		CEBBB50E16D3CC57009C9A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEBBB50716D3CC57009C9A0C /* JFFUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 539103F014A88BE1007315A3;
+			remoteInfo = "JFFUI-clang";
+		};
+		CEBBB51716D3CC5E009C9A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEBBB51016D3CC5D009C9A0C /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = JFFUtils;
+		};
+		CEBBB51916D3CC5E009C9A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEBBB51016D3CC5D009C9A0C /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65802A5B148BF2930040A93A;
+			remoteInfo = JFFUtilsMacOS;
+		};
+		CEBBB51B16D3CC5E009C9A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEBBB51016D3CC5D009C9A0C /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5391044314A88C04007315A3;
+			remoteInfo = "JFFUtils-clang";
+		};
+		CEBBB51D16D3CC5E009C9A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEBBB51016D3CC5D009C9A0C /* JFFUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E57F42414F93738002D139B;
+			remoteInfo = JFFUtilsFW;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -159,6 +201,8 @@
 		CEBBB4E916D3AC1E009C9A0C /* ILValuesSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValuesSeries.h; sourceTree = "<group>"; };
 		CEBBB4EA16D3AC1E009C9A0C /* ILValuesSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILValuesSeries.m; sourceTree = "<group>"; };
 		CEBBB4EB16D3AC1E009C9A0C /* ILValuesSeriesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValuesSeriesDataSource.h; sourceTree = "<group>"; };
+		CEBBB50716D3CC57009C9A0C /* JFFUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFUI.xcodeproj; path = "../lib-third-party/JFFUI/JFFUI.xcodeproj"; sourceTree = "<group>"; };
+		CEBBB51016D3CC5D009C9A0C /* JFFUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFUtils.xcodeproj; path = "../lib-third-party/JFFUtils/JFFUtils.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +250,8 @@
 		CEBBB44616D36D66009C9A0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEBBB51016D3CC5D009C9A0C /* JFFUtils.xcodeproj */,
+				CEBBB50716D3CC57009C9A0C /* JFFUI.xcodeproj */,
 				CEBBB44716D36D66009C9A0C /* Foundation.framework */,
 				CEBBB45616D36D66009C9A0C /* SenTestingKit.framework */,
 				CEBBB45816D36D66009C9A0C /* UIKit.framework */,
@@ -387,6 +433,26 @@
 			path = Calculations;
 			sourceTree = "<group>";
 		};
+		CEBBB50816D3CC57009C9A0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB50D16D3CC57009C9A0C /* libJFFUI.a */,
+				CEBBB50F16D3CC57009C9A0C /* libJFFUI copy.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEBBB51116D3CC5D009C9A0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB51816D3CC5E009C9A0C /* libJFFUtils.a */,
+				CEBBB51A16D3CC5E009C9A0C /* libJFFUtilsMacOS.a */,
+				CEBBB51C16D3CC5E009C9A0C /* libJFFUtils-clang.a */,
+				CEBBB51E16D3CC5E009C9A0C /* JFFUtilsFW.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -445,6 +511,16 @@
 			mainGroup = CEBBB43B16D36D66009C9A0C;
 			productRefGroup = CEBBB44516D36D66009C9A0C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CEBBB50816D3CC57009C9A0C /* Products */;
+					ProjectRef = CEBBB50716D3CC57009C9A0C /* JFFUI.xcodeproj */;
+				},
+				{
+					ProductGroup = CEBBB51116D3CC5D009C9A0C /* Products */;
+					ProjectRef = CEBBB51016D3CC5D009C9A0C /* JFFUtils.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CEBBB44316D36D66009C9A0C /* ILCharts */,
@@ -452,6 +528,52 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CEBBB50D16D3CC57009C9A0C /* libJFFUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFUI.a;
+			remoteRef = CEBBB50C16D3CC57009C9A0C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEBBB50F16D3CC57009C9A0C /* libJFFUI copy.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = "libJFFUI copy.a";
+			path = "libJFFUI-clang.a";
+			remoteRef = CEBBB50E16D3CC57009C9A0C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEBBB51816D3CC5E009C9A0C /* libJFFUtils.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFUtils.a;
+			remoteRef = CEBBB51716D3CC5E009C9A0C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEBBB51A16D3CC5E009C9A0C /* libJFFUtilsMacOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJFFUtilsMacOS.a;
+			remoteRef = CEBBB51916D3CC5E009C9A0C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEBBB51C16D3CC5E009C9A0C /* libJFFUtils-clang.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libJFFUtils-clang.a";
+			remoteRef = CEBBB51B16D3CC5E009C9A0C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEBBB51E16D3CC5E009C9A0C /* JFFUtilsFW.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = JFFUtilsFW.framework;
+			remoteRef = CEBBB51D16D3CC5E009C9A0C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CEBBB45216D36D66009C9A0C /* Resources */ = {
@@ -610,6 +732,7 @@
 				DSTROOT = /tmp/ILCharts.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILCharts/ILCharts-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../lib-third-party/";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -622,6 +745,7 @@
 				DSTROOT = /tmp/ILCharts.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILCharts/ILCharts-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../lib-third-party/";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

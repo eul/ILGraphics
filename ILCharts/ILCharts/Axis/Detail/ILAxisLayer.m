@@ -13,6 +13,8 @@
 
 #import "ILChartViewInternalDelegate.h"
 
+#import <JFFUtils/JFFMulticastDelegate.h>
+
 @interface ILAxisLayer ()
 
 @property (nonatomic) id< ILAxis > axis;

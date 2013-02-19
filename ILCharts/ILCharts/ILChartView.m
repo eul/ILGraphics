@@ -17,12 +17,15 @@
 
 #include <objc/message.h>
 
-@interface ILChartView () < UIScrollViewDelegate, ILInternalChartView >
+#import <JFFUtils/JFFMulticastDelegate.h>
+#import <JFFUI/UIView/UIView+AddSubviewAndScale.h>
 
-@property ( nonatomic, weak ) UIScrollView* scrollView;
-@property ( nonatomic, weak ) UIView*       contentView;
+@interface ILChartView () <UIScrollViewDelegate, ILInternalChartView>
 
-@property ( nonatomic ) JFFMulticastDelegate< ILChartViewInternalDelegate > *internalDelegate;
+@property (nonatomic, weak) UIScrollView* scrollView;
+@property (nonatomic, weak) UIView*       contentView;
+
+@property (nonatomic) JFFMulticastDelegate< ILChartViewInternalDelegate > *internalDelegate;
 
 @end
 
@@ -37,9 +40,7 @@
     self = [super initWithFrame: frame];
     
     if (self)
-    {
         [self initilalize];
-    }
 
     return self;
 }
@@ -61,86 +62,6 @@
     self.contentSize       = self.contentView.bounds.size;
     
     [self addGestureRecognizer: self.tapRecognizer];
-}
-
-- (CGRect *)contentViewInsetsPtr
-{
-    return &self->_contentViewInsets;
-}
-
-- (UIView *)contentView
-{
-    if ( !self->_contentView )
-    {
-        UIView *contentView = [[UIView alloc] initWithFrame: self.bounds];
-        contentView.clipsToBounds = NO;
-        [self addSubview: contentView];
-        self->_contentView = contentView;
-    }
-    return self->_contentView;
-}
-
-- (UIScrollView *)scrollView
-{
-    if ( !self->_scrollView )
-    {
-        UIScrollView* scrollView = [ [ UIScrollView alloc ] initWithFrame: self.bounds ];
-        scrollView.delegate = self;
-        scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        //clip chart content here
-        scrollView.clipsToBounds = YES;
-        
-        [self.contentView addSubviewAndScale: scrollView];
-        self->_scrollView = scrollView;
-    }
-    return self->_scrollView;
-}
-
-- (UITapGestureRecognizer *)tapRecognizer
-{
-    if ( !self->_tapRecognizer )
-    {
-        SEL selector = @selector( handeleTap: );
-        self->_tapRecognizer = [ [ UITapGestureRecognizer alloc ] initWithTarget: self
-                                                                          action: selector];
-        self->_tapRecognizer.cancelsTouchesInView = NO;
-    }
-    return self->_tapRecognizer;
-}
-
-- (void)handeleTap:(UITapGestureRecognizer *)recognizer
-{
-    if (recognizer.state == UIGestureRecognizerStateEnded)
-    {
-        CGPoint tapLocation = [recognizer locationInView: self];
-        
-        CALayer *tappedLayer = [ self.layer hitTest: tapLocation];
-        if ([tappedLayer respondsToSelector: @selector(hadleTapAtPoint:)])
-        {
-            CGPoint positionInLayer = [self.layer convertPoint: tapLocation toLayer: tappedLayer];
-            [(ILAxisLayer*)tappedLayer hadleTapAtPoint: positionInLayer];
-        }
-    }
-}
-
-- (CGSize)getContentViewSize
-{
-    CGFloat width  = self.bounds.size.width  - self->_contentViewInsets.origin.x - self->_contentViewInsets.size.width;
-    CGFloat height = self.bounds.size.height - self->_contentViewInsets.origin.y - self->_contentViewInsets.size.height;
-    CGSize result  = (CGSize){width, height};
-    return result;
-}
-
-- (CGRect)getContentViewFrame
-{
-    CGSize size = [self getContentViewSize];
-    return CGRectMake
-    (
-     self->_contentViewInsets.origin.x,
-     self->_contentViewInsets.origin.y,
-     size.width, size.height
-     );
 }
 
 - (void)addAxis:(id< ILAxis >)axis
@@ -203,10 +124,66 @@
                            scrolling: isScrolling ];
 }
 
+#pragma mark- Properties
+- (CGRect *)contentViewInsetsPtr
+{
+    return &self->_contentViewInsets;
+}
+
+- (UIView *)contentView
+{
+    if ( !self->_contentView )
+    {
+        UIView *contentView = [[UIView alloc] initWithFrame: self.bounds];
+        contentView.clipsToBounds = NO;
+        [self addSubview: contentView];
+        self->_contentView = contentView;
+    }
+    return self->_contentView;
+}
+
+- (UIScrollView *)scrollView
+{
+    if ( !self->_scrollView )
+    {
+        UIScrollView* scrollView = [ [ UIScrollView alloc ] initWithFrame: self.bounds ];
+        scrollView.delegate = self;
+        scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        //clip chart content here
+        scrollView.clipsToBounds = YES;
+        
+        [self.contentView addSubviewAndScale: scrollView];
+        self->_scrollView = scrollView;
+    }
+    return self->_scrollView;
+}
+
+- (CGSize)getContentViewSize
+{
+    CGFloat width  = self.bounds.size.width  - self->_contentViewInsets.origin.x - self->_contentViewInsets.size.width;
+    CGFloat height = self.bounds.size.height - self->_contentViewInsets.origin.y - self->_contentViewInsets.size.height;
+    CGSize result  = (CGSize){width, height};
+    return result;
+}
+
+- (CGRect)getContentViewFrame
+{
+    CGSize size = [self getContentViewSize];
+    return CGRectMake
+    (
+     self->_contentViewInsets.origin.x,
+     self->_contentViewInsets.origin.y,
+     size.width, size.height
+     );
+}
+
 - (CGFloat)chartInitialVerticalOffset
 {
     return self.scrollFromTop ? 0.f : self->_contentSize.height - self.contentView.bounds.size.height;
 }
+
+#pragma mark- Layout
 
 - (void)layoutCustomSubviews
 {
@@ -219,7 +196,7 @@
     
     for (CALayer *layer in self.scrollView.layer.sublayers)
     {
-        if ( [layer isKindOfClass: [ILLayer class ]])
+        if ( [layer isKindOfClass: [ILLayer class]])
         {
             layer.frame = CGRectMake(0.f, 0.f, self.scrollView.contentSize.width , self.scrollView.contentSize.height);
         }
@@ -233,7 +210,7 @@
     [self layoutCustomSubviews];
 }
 
-- (void)setContentSize:( CGSize )contentSize
+- (void)setContentSize:(CGSize)contentSize
 {
     self->_contentSize = contentSize;
     
@@ -245,6 +222,35 @@
 - (CGRect)visibleContentRect
 {
     return (CGRect){ self.scrollView.contentOffset, self.scrollView.frame.size };
+}
+
+#pragma mark- Recognizers
+
+- (UITapGestureRecognizer *)tapRecognizer
+{
+    if ( !self->_tapRecognizer )
+    {
+        SEL selector = @selector( handeleTap: );
+        self->_tapRecognizer = [ [ UITapGestureRecognizer alloc ] initWithTarget: self
+                                                                          action: selector];
+        self->_tapRecognizer.cancelsTouchesInView = NO;
+    }
+    return self->_tapRecognizer;
+}
+
+- (void)handeleTap:(UITapGestureRecognizer *)recognizer
+{
+    if (recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        CGPoint tapLocation = [recognizer locationInView: self];
+        
+        CALayer *tappedLayer = [ self.layer hitTest: tapLocation];
+        if ([tappedLayer respondsToSelector: @selector(hadleTapAtPoint:)])
+        {
+            CGPoint positionInLayer = [self.layer convertPoint: tapLocation toLayer: tappedLayer];
+            [(ILAxisLayer*)tappedLayer hadleTapAtPoint: positionInLayer];
+        }
+    }
 }
 
 #pragma mark- UIScrollViewDelegate

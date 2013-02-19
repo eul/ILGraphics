@@ -145,7 +145,7 @@ typedef std::vector<CGPoint> CGPoint_vt;
 
     NSUInteger pointsCount = [self pointsCount];
     
-    if (pointsCount_ < 1)
+    if (pointsCount < 1)
     {
         return;
     }

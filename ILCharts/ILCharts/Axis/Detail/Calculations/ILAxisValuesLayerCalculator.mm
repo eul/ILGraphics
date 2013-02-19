@@ -80,7 +80,7 @@
                                       positionForValueAtIndex: index
                                                  withTextSize: state.textSize];
 
-    if (position_.x < -(MAXFLOAT+1.f) || position_.y < -(MAXFLOAT+1))
+    if (position.x < -(MAXFLOAT+1.f) || position.y < -(MAXFLOAT+1))
         return CGRectZero;
     
     BOOL isVertical = [self.valuesLayer.delegate isAxisVerticalForValuesLayer: self.valuesLayer];
