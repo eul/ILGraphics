@@ -1,352 +1,353 @@
 #import "ILAxisLayer.h"
 
-#import "SCAxis.h"
-#import "SCAxisDelegate.h"
-#import "SCInternalChartView.h"
+#import "ILAxis.h"
+#import "ILAxisDelegate.h"
+#import "ILInternalChartView.h"
 
-#import "SCLeftVerticalAxisLayer.h"
-#import "SCRightVerticalAxisLayer.h"
-#import "SCRightHorizontalAxisLayer.h"
-#import "SCLeftHorizontalAxisLayer.h"
+#import "ILLeftVerticalAxisLayer.h"
+#import "ILRightVerticalAxisLayer.h"
+#import "ILRightHorizontalAxisLayer.h"
+#import "ILLeftHorizontalAxisLayer.h"
 
-#import "SCAxisValuesLayer.h"
+#import "ILAxisValuesLayer.h"
 
-#import "SCChartViewInternalDelegate.h"
+#import "ILChartViewInternalDelegate.h"
 
 @interface ILAxisLayer ()
 
-@property ( nonatomic ) id< ILAxis > axis;
-@property ( nonatomic, weak ) id< ILInternalChartView > chart;
-@property ( nonatomic, weak ) ILAxisValuesLayer* valuesLayer;
+@property (nonatomic) id< ILAxis > axis;
+@property (nonatomic, weak) id< ILInternalChartView > chart;
+@property (nonatomic, weak) ILAxisValuesLayer *valuesLayer;
 
 @end
 
 @implementation ILAxisLayer
 
--(id)initWithChartView:( id< ILInternalChartView > )chart_
-                  axis:( id< ILAxis > )axis_
+- (id)initWithChartView:(id< ILInternalChartView >)chart
+                   axis:(id< ILAxis >)axis
 {
-    self = [ super init ];
+    self = [super init];
 
-    if ( self )
+    if (self)
     {
-        self->_axis  = axis_;
-        self->_chart = chart_;
+        self->_axis  = axis;
+        self->_chart = chart;
 
-        [ self initialize ];
+        [self initialize];
     }
 
     return self;
 }
 
--(void)initialize
+- (void)initialize
 {
-    [ self->_chart.internalDelegate addDelegate: self ];
+    [self->_chart.internalDelegate addDelegate: self];
 }
 
--(void)reloadData
+- (void)reloadData
 {
-    [ self.valuesLayer setNeedsDisplay ];
-    [ self setNeedsDisplay ];
+    [self.valuesLayer setNeedsDisplay];
+    [self setNeedsDisplay];
 }
 
--(void)updateContentViewInsets
+- (void)updateContentViewInsets
 {
     [ self doesNotRecognizeSelector: _cmd ];
 }
 
--(CGFloat)startOffset
+-( CGFloat)startOffset
 {
     return 0.f;
 }
 
--(void)hadleTapAtPoint:( CGPoint )tapPoint_
+- (void)hadleTapAtPoint:(CGPoint)tapPoint
 {
 
 }
 
-+(void)addAxisLayerToChartView:( id< ILInternalChartView > )chart_
-                          axis:( id< ILAxis > )axis_
++ (void)addAxisLayerToChartView:(id< ILInternalChartView >)chart
+                           axis:(id< ILAxis >)axis
 {
-    Class layerClass_;
-    if ( axis_.gravity == ILAxisGravityLeft
-         && axis_.orientation == ILAxisOrientationVertical )
+    Class layerClass;
+    if (axis.gravity == ILAxisGravityLeft
+         && axis.orientation == ILAxisOrientationVertical)
     {
-        layerClass_ = [ ILLeftVerticalAxisLayer class ];
+        layerClass = [ ILLeftVerticalAxisLayer class ];
     }
-    else if ( axis_.gravity == ILAxisGravityRight
-              && axis_.orientation == ILAxisOrientationVertical )
+    else if (axis.gravity == ILAxisGravityRight
+              && axis.orientation == ILAxisOrientationVertical)
     {
-        layerClass_ = [ ILRightVerticalAxisLayer class ];
+        layerClass = [ILRightVerticalAxisLayer class];
     }
-    else if ( axis_.gravity == ILAxisGravityRight
-              && axis_.orientation == ILAxisOrientationHorizontal )
+    else if ( axis.gravity == ILAxisGravityRight
+              && axis.orientation == ILAxisOrientationHorizontal)
     {
-        layerClass_ = [ ILRightHorizontalAxisLayer class ];
+        layerClass = [ILRightHorizontalAxisLayer class];
     }
     else
     {
-        layerClass_ = [ ILLeftHorizontalAxisLayer class ];
+        layerClass = [ILLeftHorizontalAxisLayer class];
     }
-    ILAxisLayer* layer_ = [ [ layerClass_ alloc ] initWithChartView: chart_ axis: axis_ ];
+    ILAxisLayer *layer = [[layerClass alloc] initWithChartView: chart axis: axis];
 
-    [ layer_ updateContentViewInsets ];
+    [layer updateContentViewInsets];
 
-    [ layer_ addSublayer: layer_.valuesLayer ];
+    [layer addSublayer: layer.valuesLayer];
 
-    chart_.contentSize = [ chart_ getContentViewSize ];
+    chart.contentSize = [chart getContentViewSize];
 
-    [ chart_.contentView.layer addSublayer: layer_ ];
+    [chart.contentView.layer addSublayer: layer];
 
-    [ layer_ reloadData ];
+    [layer reloadData];
 
-    layer_.backgroundColor = [ layer_.axis.delegate respondsToSelector: @selector( backgroundColorForAxis: ) ]
-                             ? [ layer_.axis.delegate backgroundColorForAxis: layer_.axis ].CGColor
-                             : [ UIColor clearColor ].CGColor;
+    layer.backgroundColor = [layer.axis.delegate respondsToSelector: @selector(backgroundColorForAxis:)]
+                            ? [layer.axis.delegate backgroundColorForAxis: layer.axis].CGColor
+                            : [UIColor clearColor ].CGColor;
 }
 
--(SCAxisValuesLayer*)createValuesLayer
+- (ILAxisValuesLayer *)createValuesLayer
 {
-    ILAxisValuesLayer* layer_ = [ ILAxisValuesLayer new ];
-    layer_.frame = self.bounds;
-    layer_.delegate = self;
+    ILAxisValuesLayer *layer = [ILAxisValuesLayer new];
+    layer.frame = self.bounds;
+    layer.delegate = self;
 
-    return layer_;
+    return layer;
 }
 
--(SCAxisValuesLayer*)valuesLayer
+- (ILAxisValuesLayer *)valuesLayer
 {
-    if ( !self->_valuesLayer )
+    if (!self->_valuesLayer)
     {
-        ILAxisValuesLayer* layer_ = [ self createValuesLayer ];
-        self->_valuesLayer = layer_;
-        return layer_;
+        ILAxisValuesLayer *layer = [self createValuesLayer];
+        self->_valuesLayer = layer;
+        return layer;
     }
     return self->_valuesLayer;
 }
 
--(CGRect)actualRectForFrame
+- (CGRect)actualRectForFrame
 {
-    [ self doesNotRecognizeSelector: _cmd ];
+    [self doesNotRecognizeSelector: _cmd];
     return CGRectZero;
 }
 
--(void)updateFrame
+- (void)updateFrame
 {
-    self.frame = [ self actualRectForFrame ];
+    self.frame = [self actualRectForFrame];
     self.valuesLayer.frame = self.bounds;
 }
 
--(void)layoutSublayers
+- (void)layoutSublayers
 {
-    [ super layoutSublayers ];
+    [super layoutSublayers];
 
-    [ self updateFrame ];
+    [self updateFrame];
 }
 
--(BOOL)canDrawLineAtPoint:( CGFloat )currY_
+- (BOOL)canDrawLineAtPoint:(CGFloat)currY
 {
     [ self doesNotRecognizeSelector: _cmd ];
     return NO;
 }
 
--(CGFloat)shortLineStartPos
+- (CGFloat)shortLineStartPos
 {
     [ self doesNotRecognizeSelector: _cmd ];
     return 0.f;
 }
 
--(BOOL)useCenteredOffset
+- (BOOL)useCenteredOffset
 {
-    return [ self.axis.delegate respondsToSelector: @selector( useCenteredOffsetForAxis: ) ]
-           ? [ self.axis.delegate useCenteredOffsetForAxis: self.axis ]
+    return [self.axis.delegate respondsToSelector: @selector(useCenteredOffsetForAxis:)]
+           ? [self.axis.delegate useCenteredOffsetForAxis: self.axis]
            : NO;
 }
 
--(BOOL)useCenteredOffsetForValues
+- (BOOL)useCenteredOffsetForValues
 {
-    return [ self.axis.delegate respondsToSelector: @selector( useCenteredOffsetForValuesInAxis: ) ]
-           ? [ self.axis.delegate useCenteredOffsetForValuesInAxis: self.axis ]
+    return [self.axis.delegate respondsToSelector: @selector(useCenteredOffsetForValuesInAxis:)]
+           ? [self.axis.delegate useCenteredOffsetForValuesInAxis: self.axis]
            : NO;
 }
 
--(CGFloat)shortDevisionsWidth
+- (CGFloat)shortDevisionsWidth
 {
-    return [ self.axis.delegate respondsToSelector: @selector(shortDivisionsWidthForAxis:) ]
-           ? [ self.axis.delegate shortDivisionsWidthForAxis: self.axis ]
+    return [self.axis.delegate respondsToSelector: @selector(shortDivisionsWidthForAxis:)]
+           ? [self.axis.delegate shortDivisionsWidthForAxis: self.axis]
            : 1.f;
 }
 
--(CGFloat)shortDevisionsLength
+- (CGFloat)shortDevisionsLength
 {
-    return [ self.axis.delegate respondsToSelector: @selector(shortDivisionsLengthForAxis:) ]
-           ? [ self.axis.delegate shortDivisionsLengthForAxis: self.axis ]
+    return [self.axis.delegate respondsToSelector: @selector(shortDivisionsLengthForAxis:)]
+           ? [self.axis.delegate shortDivisionsLengthForAxis: self.axis]
            : 5.f;
 }
 
--(UIColor*)shortDivisionsColor
+- (UIColor *)shortDivisionsColor
 {
-    return [ self.axis.delegate respondsToSelector: @selector(shortDivisionsColorForAxis:) ]
-           ? [ self.axis.delegate shortDivisionsColorForAxis: self.axis ]
-           : [ UIColor grayColor ];
+    return [self.axis.delegate respondsToSelector: @selector(shortDivisionsColorForAxis:)]
+           ? [self.axis.delegate shortDivisionsColorForAxis: self.axis]
+           : [UIColor grayColor];
 }
 
--(CGFloat)bigDivisionsLength
+- (CGFloat)bigDivisionsLength
 {
-    return [ self.axis.delegate respondsToSelector: @selector(bigDivisionsLengthForAxis:) ]
-           ? [ self.axis.delegate bigDivisionsLengthForAxis: self.axis ]
+    return [self.axis.delegate respondsToSelector: @selector(bigDivisionsLengthForAxis:)]
+           ? [self.axis.delegate bigDivisionsLengthForAxis: self.axis]
            : 8.f;
 }
 
--(CGFloat)bigDivisionsWidth
+- (CGFloat)bigDivisionsWidth
 {
-    return [ self.axis.delegate respondsToSelector: @selector(bigDivisionsWidthForAxis:) ]
-           ? [ self.axis.delegate bigDivisionsWidthForAxis: self.axis ]
+    return [self.axis.delegate respondsToSelector: @selector(bigDivisionsWidthForAxis:)]
+           ? [self.axis.delegate bigDivisionsWidthForAxis: self.axis]
            : 2.f;
 }
 
--(UIColor*)bigDivisionsColor
+- (UIColor *)bigDivisionsColor
 {
-    return [ self.axis.delegate respondsToSelector: @selector(bigDivisionsColorForAxis:) ]
-           ? [ self.axis.delegate bigDivisionsColorForAxis: self.axis ]
-           : [ UIColor grayColor ];
+    return [self.axis.delegate respondsToSelector: @selector(bigDivisionsColorForAxis:)]
+           ? [self.axis.delegate bigDivisionsColorForAxis: self.axis]
+           : [UIColor grayColor];
 }
 
--(UIFont*)fontForLabelAtPoint:( NSInteger )pointIndex_
+- (UIFont *)fontForLabelAtPoint:(NSInteger)pointIndex
 {
-    return [ self.axis.delegate respondsToSelector: @selector(axis:fontForLabelAtPoint:) ]
-           ? [ self.axis.delegate axis: self.axis fontForLabelAtPoint: pointIndex_ ]
-           : [ UIFont fontWithName:@"Helvetica Neue" size: 10.f ];
+    return [self.axis.delegate respondsToSelector: @selector(axis:fontForLabelAtPoint:)]
+           ? [self.axis.delegate axis: self.axis fontForLabelAtPoint: pointIndex]
+           : [UIFont fontWithName:@"Helvetica Neue" size: 10.f];
 }
 
--(UIColor*)colorForLabelAtPoint:( NSInteger )pointIndex_
+- (UIColor *)colorForLabelAtPoint:(NSInteger)pointIndex
 {
-    return [ self.axis.delegate respondsToSelector: @selector(axis:colorForLabelAtPoint:) ]
-           ? [ self.axis.delegate axis: self.axis colorForLabelAtPoint: pointIndex_ ]
-           : [ UIColor blackColor ];
+    return [self.axis.delegate respondsToSelector: @selector(axis:colorForLabelAtPoint:)]
+           ? [self.axis.delegate axis: self.axis colorForLabelAtPoint: pointIndex]
+           : [UIColor blackColor];
 }
 
--(CGFloat)axisWidth
+- (CGFloat)axisWidth
 {
-    return [ self.axis.delegate respondsToSelector: @selector(widthForAxis:) ]
-           ? [ self.axis.delegate widthForAxis: self.axis ]
+    return [self.axis.delegate respondsToSelector: @selector(widthForAxis:)]
+           ? [self.axis.delegate widthForAxis: self.axis]
            : 4.f;
 }
 
--(UIColor*)axisColor
+- (UIColor *)axisColor
 {
-    return [ self.axis.delegate respondsToSelector: @selector(colorForAxis:) ]
-           ? [ self.axis.delegate colorForAxis: self.axis ]
-           : [ UIColor orangeColor ];
+    return [self.axis.delegate respondsToSelector: @selector(colorForAxis:)]
+           ? [self.axis.delegate colorForAxis: self.axis]
+           : [UIColor orangeColor];
 }
 
--(CGFloat)labelsRotationAngleInRadians
+- (CGFloat)labelsRotationAngleInRadians
 {
-    CGFloat degrees_ = [ self.axis.delegate respondsToSelector: @selector(labelsRotationAngleInDegreesForAxis:) ]
-                       ? [ self.axis.delegate labelsRotationAngleInDegreesForAxis: self.axis ]
-                       : 0.f;
-    return (CGFloat)M_PI * degrees_ / 180.f;
+    CGFloat degrees = [self.axis.delegate respondsToSelector: @selector(labelsRotationAngleInDegreesForAxis:)]
+                      ? [self.axis.delegate labelsRotationAngleInDegreesForAxis: self.axis]
+                      : 0.f;
+    return (CGFloat)M_PI * degrees /180.f;
 }
 
--(void)drawShortLinesInContext:( CGContextRef )context_
-                  fromPosition:( CGFloat )y_
-                          step:( CGFloat )step_
+- (void)drawShortLinesInContext:(CGContextRef)context
+                   fromPosition:(CGFloat)y
+                           step:(CGFloat)step
 {
-    if ( !self.axis.drawShortDelimiters )
+    if (!self.axis.drawShortDelimiters)
         return;
 
-    CGContextSetLineWidth( context_, [ self shortDevisionsWidth ]  );
-    CGContextSetStrokeColorWithColor( context_, [ self shortDivisionsColor ].CGColor );
+    CGContextSetLineWidth(context, [self shortDevisionsWidth]);
+    CGContextSetStrokeColorWithColor(context, [self shortDivisionsColor].CGColor);
 
-    CGFloat smallStep_ = step_ / 5.f;
-    if ( smallStep_ < 2.f )
+    CGFloat smallStep = step /5.f;
+    if (smallStep < 2.f)
         return;
 
-    for ( NSUInteger index_ = 1; index_ <= 4; ++index_ )
+    for (NSUInteger index = 1; index <= 4; ++index)
     {
-        CGFloat currY_ = y_ - index_*smallStep_;
+        CGFloat currY = y - index *smallStep;
 
-        CGFloat x1_ = [ self shortLineStartPos ];
-        CGFloat x2_ = x1_ - [ self shortDevisionsLength ];
-        CGContextMoveToPoint( context_ , x1_, currY_ );
-        CGContextAddLineToPoint( context_, x2_, currY_ );
+        CGFloat x1 = [self shortLineStartPos];
+        CGFloat x2 = x1 - [self shortDevisionsLength];
+        
+        CGContextMoveToPoint(context , x1, currY);
+        CGContextAddLineToPoint(context, x2, currY);
     }
 
-    CGContextStrokePath( context_ );
+    CGContextStrokePath(context);
 }
 
 #pragma mark- ILChartViewInternalDelegate
 
--(void)chartViewDidChangeContentSize:( ILChartView* )chart_
+- (void)chartViewDidChangeContentSize:(ILChartView *)chart
 {
-    [ self updateFrame ];
+    [self updateFrame];
 }
 
--(void)chartView:( ILChartView* )chart_
- didScrollToRect:( CGRect )visibleRect_
-       scrolling:( BOOL )scrolling_
+- (void)chartView:(ILChartView *)chart
+  didScrollToRect:(CGRect)visibleRect
+        scrolling:(BOOL)scrolling
 {
-    [ self setNeedsDisplay ];
+    [self setNeedsDisplay];
 
-    [ self.valuesLayer reloadDataInRect: visibleRect_
-                              scrolling: scrolling_ ];
+    [self.valuesLayer reloadDataInRect: visibleRect
+                             scrolling: scrolling];
 }
 
 #pragma mark- ILAxisValuesLayerDelegate
 
--(CGFloat)valueTextRotationAngleInValuesLayer:( ILAxisValuesLayer* )valuesLayer_
+- (CGFloat)valueTextRotationAngleInValuesLayer:(ILAxisValuesLayer *)valuesLayer
 {
     return 0.f;
 }
 
--(NSUInteger)numberOfValuesInValuesLayer:( ILAxisValuesLayer* )valuesLayer_
+- (NSUInteger)numberOfValuesInValuesLayer:(ILAxisValuesLayer *)valuesLayer
 {
-    return (NSUInteger)[ self.axis.delegate numberOfPointsForAxis: self.axis ] + 1;
+    return (NSUInteger)[self.axis.delegate numberOfPointsForAxis: self.axis] + 1;
 }
 
--(NSString*)valuesLayer:( ILAxisValuesLayer* )valuesLayer_
-    textForValueAtIndex:( NSUInteger )index_
+- (NSString *)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+      textForValueAtIndex:(NSUInteger)index
 {
-    return [ self.axis.delegate axis: self.axis
-                   labelTextForPoint: (NSInteger)index_ ];
+    return [self.axis.delegate axis: self.axis
+                  labelTextForPoint: (NSInteger)index];
 }
 
--(UIFont*)valuesLayer:( ILAxisValuesLayer* )valuesLayer_
-  fontForValueAtIndex:( NSUInteger )index_
+- (UIFont *)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+    fontForValueAtIndex:(NSUInteger)index
 {
-    return [ self fontForLabelAtPoint: (NSInteger)index_ ];
+    return [self fontForLabelAtPoint: (NSInteger)index];
 }
 
--(UIColor*)valuesLayer:( ILAxisValuesLayer* )valuesLayer_
-  colorForValueAtIndex:( NSUInteger )index_
+- (UIColor *)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+    colorForValueAtIndex:(NSUInteger)index
 {
-    return [ self colorForLabelAtPoint: (NSInteger)index_ ];
+    return [self colorForLabelAtPoint:(NSInteger)index];
 }
 
--(CGPoint)valuesLayer:( ILAxisValuesLayer* )valuesLayer_
-positionForValueAtIndex:( NSUInteger )index_
-         withTextSize:(CGSize)textSize_
+- (CGPoint)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+positionForValueAtIndex:(NSUInteger)index
+           withTextSize:(CGSize)textSize
 {
     return CGPointZero;
 }
 
--(BOOL)isAxisVerticalForValuesLayer:( ILAxisValuesLayer* )valuesLayer_
+- (BOOL)isAxisVerticalForValuesLayer:(ILAxisValuesLayer *)valuesLayer
 {
     return NO;
 }
 
--(BOOL)isAxisLeftForValuesLayer:( ILAxisValuesLayer* )valuesLayer_
+- (BOOL)isAxisLeftForValuesLayer:(ILAxisValuesLayer *)valuesLayer
 {
     return NO;
 }
 
--(BOOL)canDrawElementWithSize:( CGSize )elementSize_
-                      atPoint:( CGPoint )point_
+- (BOOL)canDrawElementWithSize:(CGSize)elementSize
+                       atPoint:(CGPoint)point
 {
     return YES;
 }
 
--(NSInteger)nearestValueIndexToPoint:( CGPoint )point_
+- (NSInteger)nearestValueIndexToPoint:(CGPoint)point
 {
     return -1;
 }

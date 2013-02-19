@@ -9,8 +9,8 @@
 @property (nonatomic, readonly) CGFloat startXForBigDivision;
 @property (nonatomic, readonly) CGFloat endXForBigDivision;
 
--(void)drawVerticalLineInContect:( CGContextRef )context_;
+- (void)drawVerticalLineInContect:(CGContextRef)context;
 
--(CGFloat)xCoordinateForValueTextDisplayingWithSize:( CGSize )textSize_;
+- (CGFloat)xCoordinateForValueTextDisplayingWithSize:(CGSize)textSize;
 
 @end

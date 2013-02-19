@@ -10,40 +10,40 @@
 
 @implementation ILLeftVerticalAxisLayer
 
--(CGFloat)shortLineStartPos
+- (CGFloat)shortLineStartPos
 {
     return self.bounds.size.width;
 }
 
--(void)drawVerticalLineInContect:( CGContextRef )context_
+- (void)drawVerticalLineInContect:(CGContextRef)context
 {
-    CGContextSetLineWidth(context_, [self axisWidth]);
+    CGContextSetLineWidth(context, [self axisWidth]);
 
-    CGContextSetStrokeColorWithColor(context_, [self axisColor ].CGColor );
+    CGContextSetStrokeColorWithColor(context, [self axisColor ].CGColor);
 
-    CGContextMoveToPoint( context_, self.bounds.size.width, self.calculator.heightOffset );
-    CGContextAddLineToPoint( context_, self.bounds.size.width, self.bounds.size.height - self.calculator.heightOffset );
+    CGContextMoveToPoint(context, self.bounds.size.width, self.calculator.heightOffset);
+    CGContextAddLineToPoint(context, self.bounds.size.width, self.bounds.size.height - self.calculator.heightOffset);
 
-    CGContextStrokePath( context_ );
+    CGContextStrokePath(context);
 }
 
--(void)updateContentViewInsets
+- (void)updateContentViewInsets
 {
     self.chart.contentViewInsetsPtr->origin.x = fmaxf( self.chart.contentViewInsetsPtr->origin.x
                                                      , self.axis.size );
 }
 
--(CGFloat)startXForBigDivision
+- (CGFloat)startXForBigDivision
 {
     return self.bounds.size.width;
 }
 
--(CGFloat)endXForBigDivision
+- (CGFloat)endXForBigDivision
 {
     return self.bounds.size.width - [self bigDivisionsLength];
 }
 
--(CGRect)actualRectForFrame
+- (CGRect)actualRectForFrame
 {
     return CGRectMake
     (
@@ -54,16 +54,16 @@
     );
 }
 
--(CGFloat)xCoordinateForValueTextDisplayingWithSize:( CGSize )textSize_
+- (CGFloat)xCoordinateForValueTextDisplayingWithSize:(CGSize)textSize
 {
-    CGFloat textXGabarite_ = MAX(textSize_.width, textSize_.height);
+    CGFloat textXGabarite = MAX(textSize.width, textSize.height);
 
-    return self.bounds.size.width - textXGabarite_ - [self bigDivisionsLength] - 2.f;
+    return self.bounds.size.width - textXGabarite - [self bigDivisionsLength] - 2.f;
 }
 
 #pragma mark- ILAxisValuesLayerDelegate
 
--(BOOL)isAxisVerticalForValuesLayer:(ILAxisValuesLayer *)valuesLayer_
+- (BOOL)isAxisVerticalForValuesLayer:(ILAxisValuesLayer *)valuesLayer
 {
     return YES;
 }

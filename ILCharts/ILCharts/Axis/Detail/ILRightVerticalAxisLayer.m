@@ -10,23 +10,23 @@
 
 @implementation ILRightVerticalAxisLayer
 
--(CGFloat)shortLineStartPos
+- (CGFloat)shortLineStartPos
 {
-    return [ self shortDevisionsLength ];
+    return [self shortDevisionsLength];
 }
 
--(void)drawVerticalLineInContect:( CGContextRef )context_
+- (void)drawVerticalLineInContect:(CGContextRef)context
 {
-    CGContextSetLineWidth( context_, [ self axisWidth ] );
-    CGContextSetStrokeColorWithColor( context_, [ self axisColor ].CGColor );
+    CGContextSetLineWidth(context, [self axisWidth]);
+    CGContextSetStrokeColorWithColor(context, [self axisColor].CGColor);
 
-    CGContextMoveToPoint( context_, 0.f, self.calculator.heightOffset );
-    CGContextAddLineToPoint( context_, 0.f, self.bounds.size.height - self.calculator.heightOffset );
+    CGContextMoveToPoint(context, 0.f, self.calculator.heightOffset);
+    CGContextAddLineToPoint(context, 0.f, self.bounds.size.height - self.calculator.heightOffset);
 
-    CGContextStrokePath( context_ );
+    CGContextStrokePath(context);
 }
 
--(CGRect)actualRectForFrame
+- (CGRect)actualRectForFrame
 {
     return CGRectMake
     (
@@ -37,30 +37,30 @@
     );
 }
 
--(void)updateContentViewInsets
+- (void)updateContentViewInsets
 {
     self.chart.contentViewInsetsPtr->size.width = fmaxf( self.chart.contentViewInsetsPtr->size.width
                                                        , self.axis.size );
 }
 
--(CGFloat)startXForBigDivision
+- (CGFloat)startXForBigDivision
 {
     return 0.f;
 }
 
--(CGFloat)endXForBigDivision
+- (CGFloat)endXForBigDivision
 {
-    return [ self bigDivisionsLength ];
+    return [self bigDivisionsLength];
 }
 
--(CGFloat)xCoordinateForValueTextDisplayingWithSize:( CGSize )textSize_
+- (CGFloat)xCoordinateForValueTextDisplayingWithSize:(CGSize)textSize
 {
-    return [ self bigDivisionsLength ] + 2.f;
+    return [self bigDivisionsLength] + 2.f;
 }
 
 #pragma mark- ILAxisValuesLayerDelegate
 
--(BOOL)isAxisVerticalForValuesLayer:(ILAxisValuesLayer *)valuesLayer_
+- (BOOL)isAxisVerticalForValuesLayer:(ILAxisValuesLayer *)valuesLayer
 {
     return YES;
 }

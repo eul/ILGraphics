@@ -10,130 +10,130 @@
 
 @implementation ILAxisValuesLayer
 {
-    ILAxisValuesLayerCalculator* _calculator;
+    ILAxisValuesLayerCalculator *_calculator;
     CGRect                       _visibleRect;
     NSInteger                    _firstVisibleIndex;
     NSInteger                    _lastVisibleIndex;
 }
 
--(id)init
+- (id)init
 {
-    self = [ super init ];
-    if ( self )
+    self = [super init];
+    if (self)
     {
-        [ self initialize ];
+        [self initialize];
     }
     
     return self;
 }
 
--(void)initialize
+- (void)initialize
 {
-    self->_calculator = [ ILAxisValuesLayerCalculator new ];
+    self->_calculator = [ILAxisValuesLayerCalculator new];
     self->_calculator.valuesLayer = self;
 }
 
--(void)reloadDataInRect:( CGRect )rect_
-              scrolling:( BOOL )scrolling_
+- (void)reloadDataInRect:(CGRect)rect
+               scrolling:(BOOL)scrolling
 {
-    if ( !scrolling_ )
+    if (!scrolling)
     {
-        [ self->_calculator resetState ];
+        [self->_calculator resetState];
     }
     else
     {
-        [ self->_calculator refresh ];
+        [self->_calculator refresh];
     }
 
-    CGFloat newX_ = rect_.origin.x - ( rect_.size.width  / 2.f );
-    CGFloat newY_ = rect_.origin.y - ( rect_.size.height / 2.f );
+    CGFloat newX = rect.origin.x - (rect.size.width  /2.f);
+    CGFloat newY = rect.origin.y - (rect.size.height /2.f);
 
-    rect_.origin.x = ( newX_ > 0.f ) ? newX_ : 0.f;
-    rect_.origin.y = ( newY_ > 0.f ) ? newY_: 0.f;
-    rect_.size.width  *= 2.f;
-    rect_.size.height *= 2.f;
+    rect.origin.x = (newX > 0.f) ? newX : 0.f;
+    rect.origin.y = (newY > 0.f) ? newY: 0.f;
+    rect.size.width  *= 2.f;
+    rect.size.height *= 2.f;
 
-    self->_visibleRect = rect_;
+    self->_visibleRect = rect;
 
-    [ self updateValueLayersCount ];
-    [ self setNeedsDisplay ];
+    [self updateValueLayersCount];
+    [self setNeedsDisplay];
 }
 
--(void)updateValueLayersCount
+- (void)updateValueLayersCount
 {
-    NSUInteger valuesCount_ = [ self.delegate numberOfValuesInValuesLayer: self ];
+    NSUInteger valuesCount = [self.delegate numberOfValuesInValuesLayer: self];
 
-    NSInteger value1_ = [ self.delegate nearestValueIndexToPoint: CGPointMake( CGRectGetMaxX( self->_visibleRect ), CGRectGetMaxY( self->_visibleRect )) ];
-    NSInteger value2_ = [ self.delegate nearestValueIndexToPoint: self->_visibleRect.origin ];
+    NSInteger value1 = [self.delegate nearestValueIndexToPoint: CGPointMake(CGRectGetMaxX(self->_visibleRect), CGRectGetMaxY( self->_visibleRect))];
+    NSInteger value2 = [ self.delegate nearestValueIndexToPoint: self->_visibleRect.origin ];
 
-    self->_firstVisibleIndex = MIN( value1_, value2_ ) - 1;
-    self->_lastVisibleIndex  = MAX( value1_, value2_ ) + 1;
+    self->_firstVisibleIndex = MIN(value1, value2) - 1;
+    self->_lastVisibleIndex  = MAX(value1, value2) + 1;
 
     if ( self->_firstVisibleIndex < 0 )
         self->_firstVisibleIndex = 0;
 
-    if ( self->_lastVisibleIndex < 0 || self->_lastVisibleIndex >= (NSInteger)valuesCount_ )
-        self->_lastVisibleIndex = (NSInteger)valuesCount_;
+    if ( self->_lastVisibleIndex < 0 || self->_lastVisibleIndex >= (NSInteger)valuesCount)
+        self->_lastVisibleIndex = (NSInteger)valuesCount;
 
-    NSUInteger layersCount_ = (NSUInteger)(self->_lastVisibleIndex - self->_firstVisibleIndex);
+    NSUInteger layersCount = (NSUInteger)(self->_lastVisibleIndex - self->_firstVisibleIndex);
 
-    if ( layersCount_ > self.sublayers.count )
+    if ( layersCount > self.sublayers.count )
     {
-        NSUInteger sublayersCount_ = self.sublayers.count;
-        NSUInteger deltaCount_ = layersCount_ - sublayersCount_;
+        NSUInteger sublayersCount = self.sublayers.count;
+        NSUInteger deltaCount = layersCount - sublayersCount;
         
-        for ( NSUInteger i = 0; i < deltaCount_; ++i )
+        for ( NSUInteger i = 0; i < deltaCount; ++i )
         {
-            ILAxisValueLayer* valueLayer_ = [ ILAxisValueLayer new ];
-            valueLayer_.frame = CGRectZero;
+            ILAxisValueLayer* valueLayer = [ ILAxisValueLayer new ];
+            valueLayer.frame = CGRectZero;
 
-            [ self addSublayer: valueLayer_ ];
+            [self addSublayer: valueLayer];
         }
     }
-    else if ( layersCount_ < self.sublayers.count )
+    else if ( layersCount < self.sublayers.count)
     {
-        NSUInteger deltaCount_ = self.sublayers.count - layersCount_;
+        NSUInteger deltaCount = self.sublayers.count - layersCount;
 
-        for ( NSUInteger i = 0; i < deltaCount_; ++i )
+        for ( NSUInteger i = 0; i < deltaCount; ++i )
         {
-            [ self.sublayers[ 0 ] removeFromSuperlayer ];
+            [self.sublayers[0] removeFromSuperlayer];
         }
     }
 }
 
--(void)drawInContext:( CGContextRef )context_
+- (void)drawInContext:(CGContextRef)context
 {
-    UIGraphicsPushContext( context_ );
+    UIGraphicsPushContext(context);
 
-    CGFloat valuesRotationAngle_ = [self.delegate valueTextRotationAngleInValuesLayer: self ];
+    CGFloat valuesRotationAngle = [self.delegate valueTextRotationAngleInValuesLayer: self];
 
-    NSUInteger layerCounter_ = 0;
+    NSUInteger layerCounter = 0;
     
-    for ( NSInteger index_ = self->_firstVisibleIndex; index_ < self->_lastVisibleIndex; ++index_ )
+    for ( NSInteger index = self->_firstVisibleIndex; index < self->_lastVisibleIndex; ++index)
     {
-        ILAxisValueLayer* valueLayer_ = (ILAxisValueLayer*)self.sublayers[ layerCounter_++ ];
+        ILAxisValueLayer* valueLayer = (ILAxisValueLayer*)self.sublayers[layerCounter++];
 
-        ILAxisValueState* valueState_ = [ self->_calculator valueStateAtIndex: (NSUInteger)index_ ];
+        ILAxisValueState* valueState = [self->_calculator valueStateAtIndex: (NSUInteger)index];
 
-        CGRect frame_ = valueState_.frame;
-        valueLayer_.frame = frame_;
+        CGRect frame = valueState.frame;
+        valueLayer.frame = frame;
 
-        if ( CGRectIsEmpty( frame_ ) )
+        if ( CGRectIsEmpty(frame))
             continue;
 
-        valueLayer_.text = valueState_.text;
-        valueLayer_.font = valueState_.font;
-        valueLayer_.rotationAngle = valuesRotationAngle_;
+        valueLayer.text = valueState.text;
+        valueLayer.font = valueState.font;
+        valueLayer.rotationAngle = valuesRotationAngle;
     }
 
     UIGraphicsPopContext();
 }
 
--(CALayer *)hitTest:( CGPoint )point_
+- (CALayer *)hitTest:(CGPoint)point
 {
-    CALayer* hitLayer_ = [ super hitTest: point_ ];
+    CALayer *hitLayer = [super hitTest: point];
 
-    return hitLayer_ == self ? nil : hitLayer_;
+    return hitLayer == self ? nil : hitLayer;
 }
 
 @end

@@ -14,6 +14,6 @@
 
 @end
 
-@interface ILLayer : ILLayer <ILLayer>
+@interface ILLayer : CALayer <ILLayer>
 
 @end

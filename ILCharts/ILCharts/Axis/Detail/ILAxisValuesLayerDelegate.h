@@ -6,29 +6,29 @@
 @protocol ILAxisValuesLayerDelegate <NSObject>
 
 @required
--(CGFloat)valueTextRotationAngleInValuesLayer:(ILAxisValuesLayer *)valuesLayer_;
+- (CGFloat)valueTextRotationAngleInValuesLayer:(ILAxisValuesLayer *)valuesLayer;
 
--(NSUInteger)numberOfValuesInValuesLayer:(ILAxisValuesLayer *)valuesLayer_;
+- (NSUInteger)numberOfValuesInValuesLayer:(ILAxisValuesLayer *)valuesLayer;
 
--(NSString*)valuesLayer:(ILAxisValuesLayer *)valuesLayer_
-    textForValueAtIndex:(NSUInteger )index_;
+- (NSString*)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+     textForValueAtIndex:(NSUInteger)index;
 
--(UIFont*)valuesLayer:(ILAxisValuesLayer *)valuesLayer_
-  fontForValueAtIndex:(NSUInteger )index_;
+- (UIFont *)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+    fontForValueAtIndex:(NSUInteger)index;
 
--(UIColor*)valuesLayer:(ILAxisValuesLayer *)valuesLayer_
-  colorForValueAtIndex:(NSUInteger )index_;
+- (UIColor *)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+    colorForValueAtIndex:(NSUInteger)index;
 
--(CGPoint)valuesLayer:(ILAxisValuesLayer *)valuesLayer_
-positionForValueAtIndex:(NSUInteger )index_
-           withTextSize:(CGSize )textSize_;
+- (CGPoint)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+positionForValueAtIndex:(NSUInteger)index
+           withTextSize:(CGSize)textSize;
 
--(NSInteger)nearestValueIndexToPoint:( CGPoint )point_;
+- (NSInteger)nearestValueIndexToPoint:(CGPoint)point;
 
--(BOOL)isAxisVerticalForValuesLayer:(ILAxisValuesLayer *)valuesLayer_;
--(BOOL)isAxisLeftForValuesLayer:(ILAxisValuesLayer *)valuesLayer_;
+- (BOOL)isAxisVerticalForValuesLayer:(ILAxisValuesLayer *)valuesLayer;
+- (BOOL)isAxisLeftForValuesLayer:(ILAxisValuesLayer *)valuesLayer;
 
--(BOOL)canDrawElementWithSize:(CGSize )elementSize_
-                      atPoint:(CGPoint )point_;
+- (BOOL)canDrawElementWithSize:(CGSize)elementSize
+                       atPoint:(CGPoint)point;
 
 @end

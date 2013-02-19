@@ -7,7 +7,7 @@
 @required
 - (NSInteger)numberOfPointsForAxis:(ILAxis *)axis;
 
--( NSString *)axis:(ILAxis *)axis
+- (NSString *)axis:(ILAxis *)axis
 labelTextForPoint:(NSInteger)point;
 
 @optional

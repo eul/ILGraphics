@@ -1,5 +1,4 @@
 #import "ILLayer.h"
-#import <QuartzCore/QuartzCore.h>
 
 #import <Foundation/Foundation.h>
 
@@ -7,6 +6,6 @@
 
 @interface ILAxisValuesLayer : ILLayer
 
-@property ( nonatomic, weak ) id< ILAxisValuesLayerDelegate > valuesDelegate;
+@property (nonatomic, weak) id< ILAxisValuesLayerDelegate > valuesDelegate;
 
 @end

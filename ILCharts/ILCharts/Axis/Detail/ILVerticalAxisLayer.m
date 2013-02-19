@@ -9,12 +9,12 @@
 
 @implementation ILVerticalAxisLayer
 {
-    ILVerticalAxisLayerCalculator* _calculator;
+    ILVerticalAxisLayerCalculator *_calculator;
 }
 
--(ILVerticalAxisLayerCalculator*)calculator
+- (ILVerticalAxisLayerCalculator *)calculator
 {
-    if ( !self->_calculator )
+    if ( !self->_calculator)
     {
         self->_calculator = [ILVerticalAxisLayerCalculator new];
         self->_calculator.axisLayer    = self;
@@ -23,118 +23,118 @@
     return self->_calculator;
 }
 
--(void)reloadData
+- (void)reloadData
 {
-    [ self->_calculator resetState ];
-    [ super reloadData ];
+    [self->_calculator resetState];
+    [super reloadData];
 }
 
--(void)drawInContext:( CGContextRef )context_
+- (void)drawInContext:(CGContextRef)context
 {
-    if ( 0 == self.calculator.divisionsCount )
+    if (0 == self.calculator.divisionsCount)
     {
         return;
     }
 
-    [ self drawVerticalLineInContect: context_ ];
+    [self drawVerticalLineInContect: context];
 
-    CGFloat startBigDivisionX_ = self.startXForBigDivision;
-    CGFloat endBigDivisionX_   = self.endXForBigDivision;
+    CGFloat startBigDivisionX = self.startXForBigDivision;
+    CGFloat endBigDivisionX   = self.endXForBigDivision;
 
-    for ( NSUInteger index_ = 0; index_ < (NSUInteger)self.calculator.divisionsCount + 1; ++index_ )
+    for (NSUInteger index = 0; index < (NSUInteger)self.calculator.divisionsCount + 1; ++index)
     {
-        CGFloat y_ = [ self.calculator yPositionAtIndex: index_ ];
+        CGFloat y = [self.calculator yPositionAtIndex: index];
 
-        [ self drawShortLinesInContext: context_
-                          fromPosition: y_
-                                  step: self.calculator.divisionsStep ];
+        [self drawShortLinesInContext: context
+                         fromPosition: y
+                                 step: self.calculator.divisionsStep];
 
         if ( ![ self.calculator canDrawElementWithSize: CGSizeZero
-                                           atYPosition: y_ ] )
+                                           atYPosition: y])
             continue;
 
-        CGContextSetLineWidth( context_, [ self bigDivisionsWidth ]  );
-        CGContextSetStrokeColorWithColor( context_, [ self bigDivisionsColor ].CGColor );
+        CGContextSetLineWidth(context, [self bigDivisionsWidth]);
+        CGContextSetStrokeColorWithColor(context, [self bigDivisionsColor ].CGColor);
 
-        CGContextMoveToPoint( context_ , startBigDivisionX_, y_ );
-        CGContextAddLineToPoint( context_, endBigDivisionX_, y_ );
+        CGContextMoveToPoint(context, startBigDivisionX, y);
+        CGContextAddLineToPoint(context, endBigDivisionX, y);
     }
 
-    CGContextStrokePath( context_ );
+    CGContextStrokePath(context);
 }
 
--(void)drawVerticalLineInContect:(CGContextRef)context_
+- (void)drawVerticalLineInContect:(CGContextRef)context
 {
-    [ self doesNotRecognizeSelector: _cmd ];
+    [self doesNotRecognizeSelector: _cmd];
 }
 
--(CGFloat)startXForBigDivision
+- (CGFloat)startXForBigDivision
 {
     return 0.f;
 }
 
--(CGFloat)endXForBigDivision
+- (CGFloat)endXForBigDivision
 {
-    return [ self bigDivisionsLength ];
+    return [self bigDivisionsLength];
 }
 
--(void)hadleTapAtPoint:( CGPoint )tapPoint_
+- (void)hadleTapAtPoint:(CGPoint)tapPoint
 {
-    if ( [ self.axis.delegate respondsToSelector: @selector( axis:didTapPoint:atIndex: ) ] )
+    if ([self.axis.delegate respondsToSelector: @selector(axis:didTapPoint:atIndex:)])
     {
         [ self.axis.delegate axis: self.axis 
-                      didTapPoint: tapPoint_ 
-                          atIndex: [ self axisPointWithTapPoint: tapPoint_ ] ];
+                      didTapPoint: tapPoint
+                          atIndex: [self axisPointWithTapPoint: tapPoint]];
     }
 }
 
--(NSInteger)axisPointWithTapPoint:( CGPoint )tapPoint_
+- (NSInteger)axisPointWithTapPoint:(CGPoint)tapPoint
 {
-    for ( NSUInteger index_ = 0; index_ < (NSUInteger)self.calculator.divisionsCount + 1; ++index_ )
+    for ( NSUInteger index = 0; index < (NSUInteger)self.calculator.divisionsCount + 1; ++index)
     {
-        if ( tapPoint_.y > [ self.calculator yPositionAtIndex: index_ ] )
-            return (NSInteger)index_ - 1;
+        if ( tapPoint.y > [self.calculator yPositionAtIndex: index])
+            return (NSInteger)index - 1;
     }
 
     return NSNotFound;
 }
 
--(CGFloat)xCoordinateForValueTextDisplayingWithSize:( CGSize )textSize_
+- (CGFloat)xCoordinateForValueTextDisplayingWithSize:(CGSize)textSize
 {
     return MAXFLOAT;
 }
 
 #pragma mark- ILAxisValuesLayerDelegate
 
--(CGPoint)valuesLayer:(ILAxisValuesLayer *)valuesLayer_
-positionForValueAtIndex:(NSUInteger )index_
-           withTextSize:(CGSize )textSize_
+- (CGPoint)valuesLayer:(ILAxisValuesLayer *)valuesLayer
+positionForValueAtIndex:(NSUInteger)index
+           withTextSize:(CGSize)textSize
 {
-    return [self.calculator positionForValueAtIndex: index_
-                                        withTextSize: textSize_];
+    return [self.calculator positionForValueAtIndex: index
+                                       withTextSize: textSize];
 }
 
--(CGFloat)valueTextRotationAngleInValuesLayer:(ILAxisValuesLayer *)valuesLayer_
+- (CGFloat)valueTextRotationAngleInValuesLayer:(ILAxisValuesLayer *)valuesLayer
 {
     return [self labelsRotationAngleInRadians];
 }
 
--(BOOL)canDrawElementWithSize:(CGSize )elementSize_
-                      atPoint:(CGPoint )point_
+- (BOOL)canDrawElementWithSize:(CGSize)elementSize
+                       atPoint:(CGPoint)point
 {
-    return [self.calculator canDrawElementWithSize: elementSize_
-                                       atYPosition: point_.y];
+    return [self.calculator canDrawElementWithSize: elementSize
+                                       atYPosition: point.y];
 }
 
--(NSInteger)nearestValueIndexToPoint:( CGPoint )point_
+-(NSInteger)nearestValueIndexToPoint:( CGPoint )point
 {
-    NSInteger numOfPoints_ = (NSInteger)self.calculator.divisionsCount;
-    if ( 0 == numOfPoints_ )
+    NSInteger numOfPoints = (NSInteger)self.calculator.divisionsCount;
+    if ( 0 == numOfPoints )
         return -1;
 
-    CGFloat yStep_ = self.chart.contentSize.height / numOfPoints_;
+    CGFloat yStep = self.chart.contentSize.height /numOfPoints;
 
-    return numOfPoints_ - (NSInteger)(point_.y / yStep_ );
+    return numOfPoints - (NSInteger)(point.y / yStep);
 }
 
 @end

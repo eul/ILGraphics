@@ -12,23 +12,23 @@ static const CGFloat axisOffset_  = 0.f;
 
 @implementation ILRightHorizontalAxisLayer
 
--(CGFloat)shortLineStartPos
+- (CGFloat)shortLineStartPos
 {
-    return [ self shortDevisionsLength ];
+    return [self shortDevisionsLength];
 }
 
--(void)drawHorizontalLineInContect:( CGContextRef )context_
+- (void)drawHorizontalLineInContect:(CGContextRef)context
 {
-    CGContextSetLineWidth( context_, [ self axisWidth ]  );
-    CGContextSetStrokeColorWithColor( context_, [ self axisColor ].CGColor );
+    CGContextSetLineWidth(context, [self axisWidth]);
+    CGContextSetStrokeColorWithColor(context, [self axisColor].CGColor);
 
-    CGContextMoveToPoint( context_, widthOffset_ - 2.f, axisOffset_ );
-    CGContextAddLineToPoint( context_, self.bounds.size.width - widthOffset_ + 2.f, axisOffset_ );
+    CGContextMoveToPoint(context, widthOffset_ - 2.f, axisOffset_);
+    CGContextAddLineToPoint(context, self.bounds.size.width - widthOffset_ + 2.f, axisOffset_ );
 
-    CGContextStrokePath( context_ );
+    CGContextStrokePath(context);
 }
 
--(CGRect)actualRectForFrame
+- (CGRect)actualRectForFrame
 {
     return CGRectMake
     (

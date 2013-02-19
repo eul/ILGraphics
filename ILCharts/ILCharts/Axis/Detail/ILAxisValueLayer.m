@@ -2,87 +2,87 @@
 
 @implementation ILAxisValueLayer
 
--(id<CAAction>)actionForKey:( NSString* )event_
+- (id<CAAction>)actionForKey:(NSString *)event
 {
 	return nil;
 }
 
--(id)initWithLayer:( id )layer_
+- (id)initWithLayer:(id)layer
 {
-    if ( self = [ super initWithLayer: layer_ ] )
+    if (self = [super initWithLayer: layer])
     {
-        if ( [ layer_ isKindOfClass: [ ILAxisValueLayer class ] ] )
+        if ([layer isKindOfClass: [ILAxisValueLayer class]])
         {
-            ILAxisValueLayer* other_ = (SCAxisValueLayer*)layer_;
+            ILAxisValueLayer *other = (ILAxisValueLayer *)layer;
 
-            self.text          = other_.text;
-            self.font          = other_.font;
-            self.rotationAngle = other_.rotationAngle;
+            self.text          = other.text;
+            self.font          = other.font;
+            self.rotationAngle = other.rotationAngle;
 		}
 	}
 	return self;
 }
 
 
--(void)setFont:( UIFont* )font_
+- (void)setFont:(UIFont *)font
 {
-    if ( font_ != self->_font )
+    if (font != self->_font)
     {
-        self->_font = font_;
-        [ self setNeedsDisplay ];
+        self->_font = font;
+        [self setNeedsDisplay];
     }
 }
 
--(void)setText:( NSString* )text_
+- (void)setText:(NSString *)text
 {
-    if ( ![ text_ isEqualToString: self->_text ] )
+    if ( ![text isEqualToString: self->_text])
     {
-        self->_text = text_;
-        [ self setNeedsDisplay ];
+        self->_text = text;
+        [self setNeedsDisplay];
     }
 }
 
--(void)setRotationAngle:( CGFloat )rotationAngle_
+- (void)setRotationAngle:(CGFloat)rotationAngle
 {
-    if ( rotationAngle_ != self->_rotationAngle )
+    if (rotationAngle != self->_rotationAngle)
     {
-        self->_rotationAngle = rotationAngle_;
+        self->_rotationAngle = rotationAngle;
         self.affineTransform = CGAffineTransformIdentity;
         self.affineTransform = CGAffineTransformMakeRotation( self.rotationAngle );
 
-        [ self setNeedsDisplay ];
+        [self setNeedsDisplay];
     }
 }
 
--(void)setFrame:( CGRect )frame_
+- (void)setFrame:(CGRect)frame
 {
-    if ( !CGRectEqualToRect( CGRectIntegral( self.frame ), CGRectIntegral( frame_ ) ) )
+    if ( !CGRectEqualToRect(CGRectIntegral(self.frame), CGRectIntegral(frame)))
     {
-        if ( self->_rotationAngle != 0.0 )
+        if (self->_rotationAngle != 0.0)
         {
             self.affineTransform = CGAffineTransformIdentity;
             self.rotationAngle = 0.f;
         }
 
-        [ super setFrame: frame_ ];
-        [ self setNeedsDisplay ];
+        [super setFrame: frame];
+        [self setNeedsDisplay];
     }
 }
 
--(void)drawInContext:( CGContextRef )context_
+- (void)drawInContext:(CGContextRef)context
 {
-    UIGraphicsPushContext( context_ );
+    UIGraphicsPushContext(context);
 
-    [ self.text drawAtPoint: CGPointMake( 0.0, 0.0) withFont: self.font ];
+    [self.text drawAtPoint: CGPointMake(0.f, 0.f) withFont: self.font];
 
     UIGraphicsPopContext();
 }
 
--(CALayer *)hitTest:( CGPoint )point_
+- (CALayer *)hitTest:(CGPoint)point
 {
-    CALayer* hitLayer_ = [ super hitTest: point_ ];
+    CALayer *hitLayer = [super hitTest: point];
     
-    return hitLayer_ == self ? nil : hitLayer_;
+    return hitLayer == self ? nil : hitLayer;
 }
 
 @end

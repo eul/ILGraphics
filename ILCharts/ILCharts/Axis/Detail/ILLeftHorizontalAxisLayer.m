@@ -11,18 +11,18 @@
 
 @implementation ILLeftHorizontalAxisLayer
 
--(CGFloat)shortLineStartPos
+- (CGFloat)shortLineStartPos
 {
     return self.bounds.size.height;
 }
 
--(void)updateContentViewInsets
+- (void)updateContentViewInsets
 {
     self.chart.contentViewInsetsPtr->origin.y = fmaxf( self.chart.contentViewInsetsPtr->origin.y
                                                       , self.axis.size );
 }
 
--(CGRect)actualRectForFrame
+- (CGRect)actualRectForFrame
 {
     return CGRectMake( -self.widthOffset
                      , -self.axis.size
@@ -30,33 +30,33 @@
                      , self.axis.size );
 }
 
--(void)drawHorizontalLineInContect:( CGContextRef )context_
+- (void)drawHorizontalLineInContect:(CGContextRef)context
 {
-    CGContextSetLineWidth( context_, [ self axisWidth ]  );
-    CGContextSetStrokeColorWithColor( context_, [ self axisColor ].CGColor );
+    CGContextSetLineWidth(context, [self axisWidth]);
+    CGContextSetStrokeColorWithColor(context, [self axisColor].CGColor);
     
-    CGContextMoveToPoint( context_, self.widthOffset - 2.f, self.axis.size );
-    CGContextAddLineToPoint( context_, self.bounds.size.width - self.widthOffset + 2.f, self.axis.size );
+    CGContextMoveToPoint(context, self.widthOffset - 2.f, self.axis.size);
+    CGContextAddLineToPoint(context, self.bounds.size.width - self.widthOffset + 2.f, self.axis.size);
     
-    CGContextStrokePath( context_ );
+    CGContextStrokePath(context);
 }
 
--(CGFloat)startYForBigDivision
+- (CGFloat)startYForBigDivision
 {
     return self.axis.size;
 }
 
--(CGFloat)endYForBigDivision
+- (CGFloat)endYForBigDivision
 {
-    return self.axis.size - [ self bigDivisionsLength ];
+    return self.axis.size - [self bigDivisionsLength];
 }
 
--(CGFloat)yPositionForValueWithTextSize:( CGSize )textSize_
+- (CGFloat)yPositionForValueWithTextSize:(CGSize)textSize
 {
-    return [ self endYForBigDivision ] - textSize_.height - 2.f;
+    return [self endYForBigDivision] - textSize.height - 2.f;
 }
 
--(BOOL)isAxisLeftForValuesLayer:( SCAxisValuesLayer* )valuesLayer_
+- (BOOL)isAxisLeftForValuesLayer:(ILAxisValuesLayer *)valuesLayer
 {
     return YES;
 }

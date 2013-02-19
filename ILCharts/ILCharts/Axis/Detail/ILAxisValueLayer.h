@@ -2,8 +2,8 @@
 
 @interface ILAxisValueLayer : CALayer
 
-@property ( nonatomic ) NSString* text;
-@property ( nonatomic ) UIFont*   font;
-@property ( nonatomic ) CGFloat   rotationAngle;
+@property (nonatomic) NSString *text;
+@property (nonatomic) UIFont   *font;
+@property (nonatomic) CGFloat   rotationAngle;
 
 @end
