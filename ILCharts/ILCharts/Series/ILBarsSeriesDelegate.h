@@ -40,7 +40,7 @@
 - (CGGradientRef)barsSeries:(ILBarsSeries *)barSeries gradientForBarAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
-/// recomended to specify in case you define SCBarsSeries as dataSource for SCValuesSeries
+/// recomended to specify in case you define ILBarsSeries as dataSource for ILValuesSeries
 - (NSString *)barsSeries:(ILBarsSeries *)barSeries valueTextAtIndexPath:( NSIndexPath *)indexPath;
 - (NSString *)maxValueTextForBarsSeries:(ILBarsSeries*)barSeries;
 - (UIFont *)valuesTextFontInBarsSeries:(ILBarsSeries *)series;

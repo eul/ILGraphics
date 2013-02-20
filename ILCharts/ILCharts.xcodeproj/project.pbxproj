@@ -48,6 +48,7 @@
 		CEBBB4F916D3AC1E009C9A0C /* ILValueLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4E616D3AC1E009C9A0C /* ILValueLayer.mm */; };
 		CEBBB4FA16D3AC1E009C9A0C /* ILValuesContainerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4E816D3AC1E009C9A0C /* ILValuesContainerLayer.m */; };
 		CEBBB4FB16D3AC1E009C9A0C /* ILValuesSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB4EA16D3AC1E009C9A0C /* ILValuesSeries.m */; };
+		CEBBB60B16D508D5009C9A0C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB60A16D508D5009C9A0C /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,7 @@
 		CEBBB4EB16D3AC1E009C9A0C /* ILValuesSeriesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValuesSeriesDataSource.h; sourceTree = "<group>"; };
 		CEBBB50716D3CC57009C9A0C /* JFFUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFUI.xcodeproj; path = "../lib-third-party/JFFUI/JFFUI.xcodeproj"; sourceTree = "<group>"; };
 		CEBBB51016D3CC5D009C9A0C /* JFFUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFUtils.xcodeproj; path = "../lib-third-party/JFFUtils/JFFUtils.xcodeproj"; sourceTree = "<group>"; };
+		CEBBB60A16D508D5009C9A0C /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBBB60B16D508D5009C9A0C /* libc++.dylib in Frameworks */,
 				CEBBB44816D36D66009C9A0C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +234,7 @@
 		CEBBB43B16D36D66009C9A0C = {
 			isa = PBXGroup;
 			children = (
+				CEBBB60A16D508D5009C9A0C /* libc++.dylib */,
 				CEBBB44916D36D66009C9A0C /* ILCharts */,
 				CEBBB45E16D36D66009C9A0C /* ILChartsTests */,
 				CEBBB44616D36D66009C9A0C /* Frameworks */,
@@ -733,7 +737,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILCharts/ILCharts-Prefix.pch";
 				HEADER_SEARCH_PATHS = "../lib-third-party/";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-L../lib-third-party",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -746,7 +753,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILCharts/ILCharts-Prefix.pch";
 				HEADER_SEARCH_PATHS = "../lib-third-party/";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-L../lib-third-party",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -801,6 +811,7 @@
 				CEBBB46B16D36D66009C9A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEBBB46C16D36D66009C9A0C /* Build configuration list for PBXNativeTarget "ILChartsTests" */ = {
 			isa = XCConfigurationList;
@@ -809,6 +820,7 @@
 				CEBBB46E16D36D66009C9A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
