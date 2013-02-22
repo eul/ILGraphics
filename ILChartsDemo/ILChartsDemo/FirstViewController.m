@@ -1,12 +1,16 @@
 #import "FirstViewController.h"
 
 #import "BarSeriesDelegate.h"
+#import "VerticalAxisDelegate.h"
+#import "HorizontalAxisDelegate.h"
 
 #import <ILCharts/ILChartView.h>
 #import <ILCharts/Series/ILBarsSeries.h>
 #import <ILCharts/Series/ILBarsSeriesDelegate.h>
-
 #import <ILCharts/Series/ILValuesSeries.h>
+
+#import <ILCharts/Axis/ILAxis.h>
+
 
 @interface FirstViewController ()
 @end
@@ -15,6 +19,9 @@
 {
     ILBarsSeries       *_barSeries;
     BarSeriesDelegate  *_barDelegate;
+    
+    VerticalAxisDelegate   *_verticalAxisDelegate;
+    HorizontalAxisDelegate *_horizontalAxisDelegate;
     
     BOOL _barsOrientationHorizontal;
 }
@@ -36,12 +43,58 @@
 
 - (void)setupChart
 {
-    _barSeries = [ILBarsSeries new];
+    // Left Axis
+    {
+        id< ILAxis > leftAxis = [ILAxis new];
+        _verticalAxisDelegate = [VerticalAxisDelegate new];
+        leftAxis.delegate     = _verticalAxisDelegate;
+        leftAxis.orientation  = ILAxisOrientationVertical;
+        leftAxis.gravity      = ILAxisGravityLeft;
+        leftAxis.size         = 60.f;
 
-    _barSeries.delegate   = _barDelegate;
-    _barSeries.horizontal = _barsOrientationHorizontal;
+        [self.chartView addAxis: leftAxis];
+    }
+    // Right Axis
+    {
+        id< ILAxis > rightAxis = [ILAxis new];
+        rightAxis.delegate     = _verticalAxisDelegate;
+        rightAxis.orientation  = ILAxisOrientationVertical;
+        rightAxis.gravity      = ILAxisGravityRight;
+        rightAxis.size         = 60.f;
+        
+        [self.chartView addAxis: rightAxis];
+    }
+    // Bottom Axis
+    {
+        id< ILAxis > bottomAxis = [ILAxis new];
+        _horizontalAxisDelegate = [HorizontalAxisDelegate new];
+        bottomAxis.delegate     = _horizontalAxisDelegate;
+        bottomAxis.orientation  = ILAxisOrientationHorizontal;
+        bottomAxis.gravity      = ILAxisGravityRight;
+        bottomAxis.size         = 60.f;
+        
+        [self.chartView addAxis: bottomAxis];
+    }
+    // Top Axis
+    {
+        id< ILAxis > topAxis = [ILAxis new];
+        topAxis.delegate     = _horizontalAxisDelegate;
+        topAxis.orientation  = ILAxisOrientationHorizontal;
+        topAxis.gravity      = ILAxisGravityLeft;
+        topAxis.size         = 60.f;
+
+        [self.chartView addAxis: topAxis];
+    }
     
-    [self.chartView addSeries: _barSeries];
+    // Bar Series
+    {
+        _barSeries = [ILBarsSeries new];
+
+        _barSeries.delegate   = _barDelegate;
+        _barSeries.horizontal = _barsOrientationHorizontal;
+        
+        [self.chartView addSeries: _barSeries];
+    }
     
     self.chartView.scrollFromTop = YES;
 
