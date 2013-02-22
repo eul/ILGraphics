@@ -107,8 +107,8 @@
 
 - (void)setupChartContentSize
 {
-    CGFloat chartWidth  = _barsOrientationHorizontal ? 700 : 7000;
-    CGFloat chartHeight = _barsOrientationHorizontal ? 7000: 700;
+    CGFloat chartWidth  = _barsOrientationHorizontal ? 580 : 7000;
+    CGFloat chartHeight = _barsOrientationHorizontal ? 7000: 580;
 
     self.chartView.contentSize = CGSizeMake( chartWidth, chartHeight);
 }
