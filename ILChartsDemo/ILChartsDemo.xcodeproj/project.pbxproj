@@ -32,6 +32,7 @@
 		CEBBB60F16D51155009C9A0C /* BarSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB60E16D51155009C9A0C /* BarSeriesDelegate.m */; };
 		CEE74D5216D7A15C00F6DCFB /* VerticalAxisDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE74D5116D7A15C00F6DCFB /* VerticalAxisDelegate.m */; };
 		CEE74D5516D7A4A000F6DCFB /* HorizontalAxisDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE74D5416D7A49F00F6DCFB /* HorizontalAxisDelegate.m */; };
+		CEE74D5816D7AC8700F6DCFB /* screenShotBars.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE74D5716D7AC8700F6DCFB /* screenShotBars.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,12 +132,12 @@
 		CEBBB5B716D4FE6B009C9A0C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CEBBB5B916D4FE6B009C9A0C /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		CEBBB5BA16D4FE6B009C9A0C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		CEBBB5BC16D4FE6B009C9A0C /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		CEBBB5BE16D4FE6B009C9A0C /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		CEBBB5BC16D4FE6B009C9A0C /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = ../first.png; sourceTree = "<group>"; };
+		CEBBB5BE16D4FE6B009C9A0C /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "../first@2x.png"; sourceTree = "<group>"; };
 		CEBBB5C016D4FE6B009C9A0C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		CEBBB5C116D4FE6B009C9A0C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		CEBBB5C316D4FE6B009C9A0C /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		CEBBB5C516D4FE6B009C9A0C /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		CEBBB5C316D4FE6B009C9A0C /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = ../second.png; sourceTree = "<group>"; };
+		CEBBB5C516D4FE6B009C9A0C /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "../second@2x.png"; sourceTree = "<group>"; };
 		CEBBB5CC16D4FEF3009C9A0C /* ILCharts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ILCharts.xcodeproj; path = ../ILCharts/ILCharts.xcodeproj; sourceTree = "<group>"; };
 		CEBBB5E016D505F1009C9A0C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CEBBB5E616D50646009C9A0C /* JFFUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JFFUI.xcodeproj; path = "../lib-third-party/JFFUI/JFFUI.xcodeproj"; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 		CEE74D5116D7A15C00F6DCFB /* VerticalAxisDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalAxisDelegate.m; sourceTree = "<group>"; };
 		CEE74D5316D7A49F00F6DCFB /* HorizontalAxisDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalAxisDelegate.h; sourceTree = "<group>"; };
 		CEE74D5416D7A49F00F6DCFB /* HorizontalAxisDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalAxisDelegate.m; sourceTree = "<group>"; };
+		CEE74D5716D7AC8700F6DCFB /* screenShotBars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShotBars.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,10 +220,7 @@
 				CEBBB5BA16D4FE6B009C9A0C /* FirstViewController.m */,
 				CEBBB5C016D4FE6B009C9A0C /* SecondViewController.h */,
 				CEBBB5C116D4FE6B009C9A0C /* SecondViewController.m */,
-				CEBBB5C316D4FE6B009C9A0C /* second.png */,
-				CEBBB5C516D4FE6B009C9A0C /* second@2x.png */,
-				CEBBB5BC16D4FE6B009C9A0C /* first.png */,
-				CEBBB5BE16D4FE6B009C9A0C /* first@2x.png */,
+				CEE74D5616D7AC8700F6DCFB /* Resources */,
 				CEBBB5A516D4FE6B009C9A0C /* Supporting Files */,
 			);
 			path = ILChartsDemo;
@@ -288,6 +287,18 @@
 				CEE74D5416D7A49F00F6DCFB /* HorizontalAxisDelegate.m */,
 			);
 			path = AxesDelegates;
+			sourceTree = "<group>";
+		};
+		CEE74D5616D7AC8700F6DCFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBB5C316D4FE6B009C9A0C /* second.png */,
+				CEBBB5C516D4FE6B009C9A0C /* second@2x.png */,
+				CEBBB5BC16D4FE6B009C9A0C /* first.png */,
+				CEBBB5BE16D4FE6B009C9A0C /* first@2x.png */,
+				CEE74D5716D7AC8700F6DCFB /* screenShotBars.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,6 +438,7 @@
 				CEBBB5BF16D4FE6B009C9A0C /* first@2x.png in Resources */,
 				CEBBB5C416D4FE6B009C9A0C /* second.png in Resources */,
 				CEBBB5C616D4FE6B009C9A0C /* second@2x.png in Resources */,
+				CEE74D5816D7AC8700F6DCFB /* screenShotBars.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
