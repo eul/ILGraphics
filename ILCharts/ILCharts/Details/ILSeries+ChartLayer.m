@@ -8,6 +8,9 @@
 #import "ILBarsContainerLayer.h"
 #import "ILValuesContainerLayer.h"
 
+#import "ILPieSeries.h"
+#import "ILPiesContainerLayer.h"
+
 #import "ILBarsSeriesCalculator.h"
 
 @implementation ILSeries (ChartLayer)
@@ -28,6 +31,15 @@
     self.calculator.barsContainerLayer = layer;
 
     return  layer;
+}
+
+@end
+
+@implementation ILPieSeries (ChartLayer)
+
+- (ILLayer *)chartLayer
+{
+    return  [[ILPiesContainerLayer alloc] initWithPieSeries:self];
 }
 
 @end

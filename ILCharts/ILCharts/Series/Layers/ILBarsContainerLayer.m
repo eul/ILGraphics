@@ -19,7 +19,7 @@
     BOOL                   _scrolling;
 }
 
-- (id)initWithBarsSeries:(ILBarsSeries *)barsSeries
+- (instancetype)initWithBarsSeries:(ILBarsSeries *)barsSeries
 {
     self = [super init];
     if (self)
@@ -30,7 +30,7 @@
     return self;
 }
 
-- (id)init
+- (instancetype)init
 {
     [self doesNotRecognizeSelector: _cmd];
     return nil;

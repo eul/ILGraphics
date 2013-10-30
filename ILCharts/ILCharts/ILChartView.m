@@ -228,14 +228,14 @@
 
 - (UITapGestureRecognizer *)tapRecognizer
 {
-    if ( !self->_tapRecognizer )
+    if ( !_tapRecognizer )
     {
-        SEL selector = @selector( handeleTap: );
-        self->_tapRecognizer = [ [ UITapGestureRecognizer alloc ] initWithTarget: self
-                                                                          action: selector];
-        self->_tapRecognizer.cancelsTouchesInView = NO;
+        SEL selector = @selector(handeleTap:);
+        _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget: self
+                                                                 action: selector];
+        _tapRecognizer.cancelsTouchesInView = NO;
     }
-    return self->_tapRecognizer;
+    return _tapRecognizer;
 }
 
 - (void)handeleTap:(UITapGestureRecognizer *)recognizer
@@ -244,7 +244,7 @@
     {
         CGPoint tapLocation = [recognizer locationInView: self];
         
-        CALayer *tappedLayer = [ self.layer hitTest: tapLocation];
+        CALayer *tappedLayer = [self.layer hitTest: tapLocation];
         if ([tappedLayer respondsToSelector: @selector(hadleTapAtPoint:)])
         {
             CGPoint positionInLayer = [self.layer convertPoint: tapLocation toLayer: tappedLayer];

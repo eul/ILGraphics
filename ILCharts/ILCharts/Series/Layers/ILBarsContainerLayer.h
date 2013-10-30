@@ -8,6 +8,6 @@
 
 @property (nonatomic) ILBarsSeries *barsSeries;
 
-- (id)initWithBarsSeries:(ILBarsSeries *)barsSeries;
+- (instancetype)initWithBarsSeries:(ILBarsSeries *)barsSeries;
 
 @end

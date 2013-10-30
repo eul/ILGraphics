@@ -14,6 +14,9 @@
 		CE3C40031821104C008EF57E /* ILLineLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE3C3FFA1821104C008EF57E /* ILLineLayer.mm */; };
 		CE3C40041821104C008EF57E /* ILValueLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE3C3FFC1821104C008EF57E /* ILValueLayer.mm */; };
 		CE3C40051821104C008EF57E /* ILValuesContainerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3C3FFE1821104C008EF57E /* ILValuesContainerLayer.m */; };
+		CE3C40161821224D008EF57E /* ILPiesContainerLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE3C40151821224D008EF57E /* ILPiesContainerLayer.mm */; };
+		CE3C401918212784008EF57E /* ILPieSliceLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE3C401818212784008EF57E /* ILPieSliceLayer.mm */; };
+		CE3C401D18212CE5008EF57E /* ILChartsMath.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3C401C18212CE5008EF57E /* ILChartsMath.m */; };
 		CEBBB44816D36D66009C9A0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB44716D36D66009C9A0C /* Foundation.framework */; };
 		CEBBB44D16D36D66009C9A0C /* ILCharts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEBBB44C16D36D66009C9A0C /* ILCharts.h */; };
 		CEBBB45716D36D66009C9A0C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB45616D36D66009C9A0C /* SenTestingKit.framework */; };
@@ -131,6 +134,13 @@
 		CE3C3FFC1821104C008EF57E /* ILValueLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILValueLayer.mm; sourceTree = "<group>"; };
 		CE3C3FFD1821104C008EF57E /* ILValuesContainerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILValuesContainerLayer.h; sourceTree = "<group>"; };
 		CE3C3FFE1821104C008EF57E /* ILValuesContainerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILValuesContainerLayer.m; sourceTree = "<group>"; };
+		CE3C40141821224D008EF57E /* ILPiesContainerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILPiesContainerLayer.h; sourceTree = "<group>"; };
+		CE3C40151821224D008EF57E /* ILPiesContainerLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILPiesContainerLayer.mm; sourceTree = "<group>"; };
+		CE3C401718212784008EF57E /* ILPieSliceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILPieSliceLayer.h; sourceTree = "<group>"; };
+		CE3C401818212784008EF57E /* ILPieSliceLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILPieSliceLayer.mm; sourceTree = "<group>"; };
+		CE3C401A182128E2008EF57E /* ILPieSliceLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILPieSliceLayerDelegate.h; sourceTree = "<group>"; };
+		CE3C401B18212CE5008EF57E /* ILChartsMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILChartsMath.h; sourceTree = "<group>"; };
+		CE3C401C18212CE5008EF57E /* ILChartsMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILChartsMath.m; sourceTree = "<group>"; };
 		CEBBB44416D36D66009C9A0C /* libILCharts.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libILCharts.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBBB44716D36D66009C9A0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CEBBB44B16D36D66009C9A0C /* ILCharts-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ILCharts-Prefix.pch"; sourceTree = "<group>"; };
@@ -248,6 +258,11 @@
 				CE3C3FFC1821104C008EF57E /* ILValueLayer.mm */,
 				CE3C3FFD1821104C008EF57E /* ILValuesContainerLayer.h */,
 				CE3C3FFE1821104C008EF57E /* ILValuesContainerLayer.m */,
+				CE3C40141821224D008EF57E /* ILPiesContainerLayer.h */,
+				CE3C40151821224D008EF57E /* ILPiesContainerLayer.mm */,
+				CE3C401718212784008EF57E /* ILPieSliceLayer.h */,
+				CE3C401818212784008EF57E /* ILPieSliceLayer.mm */,
+				CE3C401A182128E2008EF57E /* ILPieSliceLayerDelegate.h */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -397,6 +412,8 @@
 				CEBBB4A416D36FFD009C9A0C /* ILLayer.m */,
 				CEBBB4A516D36FFD009C9A0C /* ILSeries+ChartLayer.h */,
 				CEBBB4A616D36FFD009C9A0C /* ILSeries+ChartLayer.m */,
+				CE3C401B18212CE5008EF57E /* ILChartsMath.h */,
+				CE3C401C18212CE5008EF57E /* ILChartsMath.m */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -625,13 +642,16 @@
 				CEBBB49016D36E26009C9A0C /* ILVerticalAxisLayerCalculator.m in Sources */,
 				CEBBB49116D36E26009C9A0C /* ILAxisLayer.m in Sources */,
 				CEBBB49216D36E26009C9A0C /* ILAxisValueLayer.m in Sources */,
+				CE3C401D18212CE5008EF57E /* ILChartsMath.m in Sources */,
 				CEBBB49316D36E26009C9A0C /* ILAxisValuesLayer.mm in Sources */,
 				CEBBB49416D36E26009C9A0C /* ILHorizontalAxisLayer.m in Sources */,
 				CEBBB49516D36E26009C9A0C /* ILLeftHorizontalAxisLayer.m in Sources */,
+				CE3C401918212784008EF57E /* ILPieSliceLayer.mm in Sources */,
 				CEBBB49616D36E26009C9A0C /* ILLeftVerticalAxisLayer.m in Sources */,
 				CEBBB49716D36E26009C9A0C /* ILRightHorizontalAxisLayer.m in Sources */,
 				CE3C40031821104C008EF57E /* ILLineLayer.mm in Sources */,
 				CEBBB49816D36E26009C9A0C /* ILRightVerticalAxisLayer.m in Sources */,
+				CE3C40161821224D008EF57E /* ILPiesContainerLayer.mm in Sources */,
 				CEBBB49916D36E26009C9A0C /* ILVerticalAxisLayer.m in Sources */,
 				CEBBB49A16D36E26009C9A0C /* ILAxis.m in Sources */,
 				CEBBB4A716D36FFD009C9A0C /* CATextLayerCentered.m in Sources */,

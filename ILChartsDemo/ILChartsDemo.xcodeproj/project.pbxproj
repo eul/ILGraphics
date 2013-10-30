@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3C40131821169A008EF57E /* PieSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3C40121821169A008EF57E /* PieSeriesDelegate.m */; };
 		CEBBB59F16D4FE6B009C9A0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB59E16D4FE6B009C9A0C /* UIKit.framework */; };
 		CEBBB5A116D4FE6B009C9A0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB5A016D4FE6B009C9A0C /* Foundation.framework */; };
 		CEBBB5A316D4FE6B009C9A0C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB5A216D4FE6B009C9A0C /* CoreGraphics.framework */; };
@@ -20,7 +21,7 @@
 		CEBBB5BB16D4FE6B009C9A0C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB5BA16D4FE6B009C9A0C /* FirstViewController.m */; };
 		CEBBB5BD16D4FE6B009C9A0C /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB5BC16D4FE6B009C9A0C /* first.png */; };
 		CEBBB5BF16D4FE6B009C9A0C /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB5BE16D4FE6B009C9A0C /* first@2x.png */; };
-		CEBBB5C216D4FE6B009C9A0C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB5C116D4FE6B009C9A0C /* SecondViewController.m */; };
+		CEBBB5C216D4FE6B009C9A0C /* PieDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB5C116D4FE6B009C9A0C /* PieDemoViewController.m */; };
 		CEBBB5C416D4FE6B009C9A0C /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB5C316D4FE6B009C9A0C /* second.png */; };
 		CEBBB5C616D4FE6B009C9A0C /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBBB5C516D4FE6B009C9A0C /* second@2x.png */; };
 		CEBBB5DF16D5025B009C9A0C /* libILCharts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB5D416D4FEF3009C9A0C /* libILCharts.a */; };
@@ -116,6 +117,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE3C40111821169A008EF57E /* PieSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieSeriesDelegate.h; sourceTree = "<group>"; };
+		CE3C40121821169A008EF57E /* PieSeriesDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieSeriesDelegate.m; sourceTree = "<group>"; };
 		CEBBB59B16D4FE6B009C9A0C /* ILChartsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILChartsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBBB59E16D4FE6B009C9A0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEBBB5A016D4FE6B009C9A0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,8 +137,8 @@
 		CEBBB5BA16D4FE6B009C9A0C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		CEBBB5BC16D4FE6B009C9A0C /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = ../first.png; sourceTree = "<group>"; };
 		CEBBB5BE16D4FE6B009C9A0C /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "../first@2x.png"; sourceTree = "<group>"; };
-		CEBBB5C016D4FE6B009C9A0C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		CEBBB5C116D4FE6B009C9A0C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		CEBBB5C016D4FE6B009C9A0C /* PieDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PieDemoViewController.h; sourceTree = "<group>"; };
+		CEBBB5C116D4FE6B009C9A0C /* PieDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieDemoViewController.m; sourceTree = "<group>"; };
 		CEBBB5C316D4FE6B009C9A0C /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = ../second.png; sourceTree = "<group>"; };
 		CEBBB5C516D4FE6B009C9A0C /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "../second@2x.png"; sourceTree = "<group>"; };
 		CEBBB5CC16D4FEF3009C9A0C /* ILCharts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ILCharts.xcodeproj; path = ../ILCharts/ILCharts.xcodeproj; sourceTree = "<group>"; };
@@ -218,8 +221,8 @@
 				CEBBB5B616D4FE6B009C9A0C /* MainStoryboard.storyboard */,
 				CEBBB5B916D4FE6B009C9A0C /* FirstViewController.h */,
 				CEBBB5BA16D4FE6B009C9A0C /* FirstViewController.m */,
-				CEBBB5C016D4FE6B009C9A0C /* SecondViewController.h */,
-				CEBBB5C116D4FE6B009C9A0C /* SecondViewController.m */,
+				CEBBB5C016D4FE6B009C9A0C /* PieDemoViewController.h */,
+				CEBBB5C116D4FE6B009C9A0C /* PieDemoViewController.m */,
 				CEE74D5616D7AC8700F6DCFB /* Resources */,
 				CEBBB5A516D4FE6B009C9A0C /* Supporting Files */,
 			);
@@ -274,6 +277,8 @@
 			children = (
 				CEBBB60D16D51155009C9A0C /* BarSeriesDelegate.h */,
 				CEBBB60E16D51155009C9A0C /* BarSeriesDelegate.m */,
+				CE3C40111821169A008EF57E /* PieSeriesDelegate.h */,
+				CE3C40121821169A008EF57E /* PieSeriesDelegate.m */,
 			);
 			path = SeriesDelegates;
 			sourceTree = "<group>";
@@ -451,8 +456,9 @@
 			files = (
 				CEBBB5AB16D4FE6B009C9A0C /* main.m in Sources */,
 				CEBBB5AF16D4FE6B009C9A0C /* AppDelegate.m in Sources */,
+				CE3C40131821169A008EF57E /* PieSeriesDelegate.m in Sources */,
 				CEBBB5BB16D4FE6B009C9A0C /* FirstViewController.m in Sources */,
-				CEBBB5C216D4FE6B009C9A0C /* SecondViewController.m in Sources */,
+				CEBBB5C216D4FE6B009C9A0C /* PieDemoViewController.m in Sources */,
 				CEBBB60F16D51155009C9A0C /* BarSeriesDelegate.m in Sources */,
 				CEE74D5216D7A15C00F6DCFB /* VerticalAxisDelegate.m in Sources */,
 				CEE74D5516D7A4A000F6DCFB /* HorizontalAxisDelegate.m in Sources */,
