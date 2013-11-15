@@ -20,9 +20,9 @@ typedef std::vector<CGPoint> CGPoint_vt;
 
 - (CGFloat)singlePointRadius
 {
-    if ([self.lineSeries.delegate respondsToSelector: @selector(singlePointRadiusForLineSeries:)])
+    if ([self.lineSeries.delegate respondsToSelector:@selector(singlePointRadiusForLineSeries:)])
     {
-        return [self.lineSeries.delegate singlePointRadiusForLineSeries: self.lineSeries];
+        return [self.lineSeries.delegate singlePointRadiusForLineSeries:self.lineSeries];
     }
 
     return 10.f;
@@ -30,9 +30,9 @@ typedef std::vector<CGPoint> CGPoint_vt;
 
 - (CGFloat)lineWidth
 {
-    if ( [ self.lineSeries.delegate respondsToSelector: @selector( lineWidthForSeries: ) ] )
+    if ([self.lineSeries.delegate respondsToSelector:@selector(lineWidthForSeries:)])
     {
-        return [ self.lineSeries.delegate lineWidthForSeries: self.lineSeries ];
+        return [self.lineSeries.delegate lineWidthForSeries: self.lineSeries];
     }
 
     return 3.5f;    
@@ -40,9 +40,9 @@ typedef std::vector<CGPoint> CGPoint_vt;
 
 - (CGFloat)verticalTrashhold
 {
-    if ( [ self.lineSeries.delegate respondsToSelector: @selector( verticalScaleFactorForSeries: ) ] )
+    if ([self.lineSeries.delegate respondsToSelector:@selector(verticalScaleFactorForSeries:)])
     {
-        return [ self.lineSeries.delegate verticalScaleFactorForSeries: self.lineSeries ];
+        return [self.lineSeries.delegate verticalScaleFactorForSeries: self.lineSeries];
     }
     
     return 1.f;    
@@ -50,15 +50,15 @@ typedef std::vector<CGPoint> CGPoint_vt;
 
 - (CGFloat)startOffset
 {
-    NSInteger numOfPoints = [ self.lineSeries.delegate respondsToSelector: @selector( significantPointsCountForLineSeries: ) ]
-                            ? static_cast<NSInteger>( [ self.lineSeries.delegate significantPointsCountForLineSeries: self.lineSeries ] )
-                            : [ self.lineSeries.delegate numberOfElementsForLineSeries: self.lineSeries ];
+    NSInteger numOfPoints = [self.lineSeries.delegate respondsToSelector:@selector(significantPointsCountForLineSeries:)]
+                            ? static_cast<NSInteger>([self.lineSeries.delegate significantPointsCountForLineSeries:self.lineSeries])
+                            : [self.lineSeries.delegate numberOfElementsForLineSeries:self.lineSeries];
     if (0 == numOfPoints)
         return 0.f;
 
     BOOL useOffset = NO;
-    if ( [self.lineSeries.delegate respondsToSelector: @selector( useCenteredOffsetForLineSeries: ) ] )
-        useOffset = [ self.lineSeries.delegate useCenteredOffsetForLineSeries: self.lineSeries ];
+    if ([self.lineSeries.delegate respondsToSelector: @selector(useCenteredOffsetForLineSeries:)])
+        useOffset = [self.lineSeries.delegate useCenteredOffsetForLineSeries: self.lineSeries];
 
     return useOffset
            ? self.bounds.size.width /numOfPoints /2.f
@@ -96,8 +96,8 @@ typedef std::vector<CGPoint> CGPoint_vt;
 
     for ( NSUInteger i = 0; i < pointsCount; ++i)
     {
-        float value = [self.lineSeries.delegate lineSeries: self.lineSeries
-                                              valueAtIndex: i ];
+        float value = [self.lineSeries.delegate lineSeries:self.lineSeries
+                                              valueAtIndex:i];
 
         CGPoint point = {stepX * i, self.bounds.size.height - self.bounds.size.height * value};
 
@@ -113,14 +113,14 @@ typedef std::vector<CGPoint> CGPoint_vt;
     NSUInteger pointsCount = userPoints.size();
 
     CGContextSetLineWidth(context, [self lineWidth]);
-    CGContextSetLineCap( context, kCGLineCapRound);
-    CGContextSetLineJoin( context, kCGLineJoinRound);
+    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineJoin(context, kCGLineJoinRound);
 
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, userPoints[0].x, userPoints[0].y);
     for (NSUInteger i = 0; i < pointsCount; ++i)
     {
-        CGContextAddLineToPoint(context, userPoints[i].x, userPoints[i].y );
+        CGContextAddLineToPoint(context, userPoints[i].x, userPoints[i].y);
     }
     CGContextStrokePath(context);
 }
