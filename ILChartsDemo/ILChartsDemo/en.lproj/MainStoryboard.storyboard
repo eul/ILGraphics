@@ -113,7 +113,7 @@
                             <constraint firstAttribute="centerX" secondItem="ssm-HW-RZl" secondAttribute="centerX" id="sCc-Vk-fvo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Line" id="N6r-WR-uWf"/>
+                    <tabBarItem key="tabBarItem" title="Line" image="second" id="N6r-WR-uWf"/>
                     <connections>
                         <outlet property="chartView" destination="ssm-HW-RZl" id="4AM-sy-Cri"/>
                     </connections>
@@ -140,10 +140,14 @@
                                     <navigationItem id="24"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgW-BV-63c" customClass="ILChartView">
-                                <rect key="frame" x="59" y="113" width="636" height="780"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgW-BV-63c" customClass="ILChartView">
+                                <rect key="frame" x="34" y="162" width="700" height="700"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="5ZC-VR-fCR"/>
+                                    <constraint firstAttribute="width" constant="700" id="Pfi-O8-90U"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07B-ow-eGT">
                                 <rect key="frame" x="59" y="62" width="92" height="44"/>
@@ -160,6 +164,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="IgW-BV-63c" secondAttribute="centerY" id="BFV-Q5-JdJ"/>
+                            <constraint firstAttribute="centerX" secondItem="IgW-BV-63c" secondAttribute="centerX" id="hwp-Aq-D5v"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pie" image="second" id="6"/>
                     <connections>
