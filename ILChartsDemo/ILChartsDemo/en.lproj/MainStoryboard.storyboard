@@ -72,6 +72,56 @@
             </objects>
             <point key="canvasLocation" x="3041" y="150"/>
         </scene>
+        <!--View Controller - Line-->
+        <scene sceneID="59i-Jt-Lqs">
+            <objects>
+                <viewController id="3Nw-iL-hdE" userLabel="View Controller - Line" customClass="LineDemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M1d-Wl-2sE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rhz-T0-cwo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Xj-PZ-sIR">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssm-HW-RZl" customClass="ILChartView">
+                                <rect key="frame" x="34" y="162" width="700" height="700"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="700" id="dJe-zd-mzC"/>
+                                    <constraint firstAttribute="height" constant="700" id="xVa-lQ-w3c"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6U-0j-JdG">
+                                <rect key="frame" x="34" y="42" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88229432399999996" green="0.88229432399999996" blue="0.88229432399999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Reload">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadAction:" destination="3Nw-iL-hdE" eventType="touchUpInside" id="Ekw-lX-HRm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ssm-HW-RZl" secondAttribute="centerY" id="0Lm-DI-TfL"/>
+                            <constraint firstItem="N6U-0j-JdG" firstAttribute="leading" secondItem="9Xj-PZ-sIR" secondAttribute="leading" constant="34" id="DMp-6f-wTV"/>
+                            <constraint firstItem="N6U-0j-JdG" firstAttribute="top" secondItem="M1d-Wl-2sE" secondAttribute="bottom" constant="22" id="fhe-KR-sS6"/>
+                            <constraint firstAttribute="centerX" secondItem="ssm-HW-RZl" secondAttribute="centerX" id="sCc-Vk-fvo"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Line" id="N6r-WR-uWf"/>
+                    <connections>
+                        <outlet property="chartView" destination="ssm-HW-RZl" id="4AM-sy-Cri"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2y5-do-0Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3042" y="2434"/>
+        </scene>
         <!--Pie Demo View Controller - Pie-->
         <scene sceneID="13">
             <objects>
@@ -133,6 +183,7 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="28"/>
+                        <segue destination="3Nw-iL-hdE" kind="relationship" relationship="viewControllers" id="3f1-92-oss"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>

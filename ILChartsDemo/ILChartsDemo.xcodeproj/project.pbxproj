@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CE3C40131821169A008EF57E /* PieSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3C40121821169A008EF57E /* PieSeriesDelegate.m */; };
+		CE79667318366EAB00CA69CD /* LineDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79667218366EAB00CA69CD /* LineDemoViewController.m */; };
+		CE79667B1836705500CA69CD /* LineSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79667A1836705500CA69CD /* LineSeriesDelegate.m */; };
 		CEBBB59F16D4FE6B009C9A0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB59E16D4FE6B009C9A0C /* UIKit.framework */; };
 		CEBBB5A116D4FE6B009C9A0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB5A016D4FE6B009C9A0C /* Foundation.framework */; };
 		CEBBB5A316D4FE6B009C9A0C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB5A216D4FE6B009C9A0C /* CoreGraphics.framework */; };
@@ -119,6 +121,10 @@
 /* Begin PBXFileReference section */
 		CE3C40111821169A008EF57E /* PieSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieSeriesDelegate.h; sourceTree = "<group>"; };
 		CE3C40121821169A008EF57E /* PieSeriesDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieSeriesDelegate.m; sourceTree = "<group>"; };
+		CE79667118366EAB00CA69CD /* LineDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDemoViewController.h; sourceTree = "<group>"; };
+		CE79667218366EAB00CA69CD /* LineDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDemoViewController.m; sourceTree = "<group>"; };
+		CE7966791836705500CA69CD /* LineSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSeriesDelegate.h; sourceTree = "<group>"; };
+		CE79667A1836705500CA69CD /* LineSeriesDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSeriesDelegate.m; sourceTree = "<group>"; };
 		CEBBB59B16D4FE6B009C9A0C /* ILChartsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILChartsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBBB59E16D4FE6B009C9A0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEBBB5A016D4FE6B009C9A0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -223,6 +229,8 @@
 				CEBBB5BA16D4FE6B009C9A0C /* FirstViewController.m */,
 				CEBBB5C016D4FE6B009C9A0C /* PieDemoViewController.h */,
 				CEBBB5C116D4FE6B009C9A0C /* PieDemoViewController.m */,
+				CE79667118366EAB00CA69CD /* LineDemoViewController.h */,
+				CE79667218366EAB00CA69CD /* LineDemoViewController.m */,
 				CEE74D5616D7AC8700F6DCFB /* Resources */,
 				CEBBB5A516D4FE6B009C9A0C /* Supporting Files */,
 			);
@@ -279,6 +287,8 @@
 				CEBBB60E16D51155009C9A0C /* BarSeriesDelegate.m */,
 				CE3C40111821169A008EF57E /* PieSeriesDelegate.h */,
 				CE3C40121821169A008EF57E /* PieSeriesDelegate.m */,
+				CE7966791836705500CA69CD /* LineSeriesDelegate.h */,
+				CE79667A1836705500CA69CD /* LineSeriesDelegate.m */,
 			);
 			path = SeriesDelegates;
 			sourceTree = "<group>";
@@ -455,7 +465,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEBBB5AB16D4FE6B009C9A0C /* main.m in Sources */,
+				CE79667B1836705500CA69CD /* LineSeriesDelegate.m in Sources */,
 				CEBBB5AF16D4FE6B009C9A0C /* AppDelegate.m in Sources */,
+				CE79667318366EAB00CA69CD /* LineDemoViewController.m in Sources */,
 				CE3C40131821169A008EF57E /* PieSeriesDelegate.m in Sources */,
 				CEBBB5BB16D4FE6B009C9A0C /* FirstViewController.m in Sources */,
 				CEBBB5C216D4FE6B009C9A0C /* PieDemoViewController.m in Sources */,
