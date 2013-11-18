@@ -2,7 +2,7 @@
 
 @class ILChartView;
 
-@interface FirstViewController : UIViewController
+@interface BarsDemoViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet ILChartView *chartView;
 

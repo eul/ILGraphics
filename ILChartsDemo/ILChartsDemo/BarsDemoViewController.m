@@ -1,4 +1,4 @@
-#import "FirstViewController.h"
+#import "BarsDemoViewController.h"
 
 #import "BarSeriesDelegate.h"
 #import "VerticalAxisDelegate.h"
@@ -12,10 +12,10 @@
 #import <ILCharts/Axis/ILAxis.h>
 
 
-@interface FirstViewController ()
+@interface BarsDemoViewController ()
 @end
 
-@implementation FirstViewController
+@implementation BarsDemoViewController
 {
     ILBarsSeries       *_barSeries;
     BarSeriesDelegate  *_barDelegate;

@@ -1,6 +1,6 @@
 #import "LineSeriesDelegate.h"
 
-#define ARC4RANDOM_MAX      0x100000000
+#define ARC4RANDOM_MAX 0x100000000
 
 #define VALUES_CNT 300
 
