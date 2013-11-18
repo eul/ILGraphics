@@ -2,7 +2,7 @@
 
 #define ARC4RANDOM_MAX      0x100000000
 
-#define VALUES_CNT 30
+#define VALUES_CNT 300
 
 @implementation LineSeriesDelegate
 {
@@ -14,7 +14,7 @@
     if (!_values) {
         _values = [NSMutableArray new];
         for (NSUInteger i=0 ;i<VALUES_CNT; ++i)
-            [_values addObject:@((double)arc4random() / ARC4RANDOM_MAX)];
+            [_values addObject:@(sin(i)/3.f + 0.5f)];
     }
     return _values;
 }
