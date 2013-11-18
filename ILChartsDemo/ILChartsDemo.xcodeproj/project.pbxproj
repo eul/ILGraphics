@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE3C40131821169A008EF57E /* PieSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3C40121821169A008EF57E /* PieSeriesDelegate.m */; };
+		CE51BBE9183A32A100B935B8 /* screenShotLine.png in Resources */ = {isa = PBXBuildFile; fileRef = CE51BBE8183A32A100B935B8 /* screenShotLine.png */; };
 		CE79667318366EAB00CA69CD /* LineDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79667218366EAB00CA69CD /* LineDemoViewController.m */; };
 		CE79667B1836705500CA69CD /* LineSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79667A1836705500CA69CD /* LineSeriesDelegate.m */; };
 		CEBBB59F16D4FE6B009C9A0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB59E16D4FE6B009C9A0C /* UIKit.framework */; };
@@ -121,6 +122,7 @@
 /* Begin PBXFileReference section */
 		CE3C40111821169A008EF57E /* PieSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieSeriesDelegate.h; sourceTree = "<group>"; };
 		CE3C40121821169A008EF57E /* PieSeriesDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieSeriesDelegate.m; sourceTree = "<group>"; };
+		CE51BBE8183A32A100B935B8 /* screenShotLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShotLine.png; sourceTree = "<group>"; };
 		CE79667118366EAB00CA69CD /* LineDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDemoViewController.h; sourceTree = "<group>"; };
 		CE79667218366EAB00CA69CD /* LineDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDemoViewController.m; sourceTree = "<group>"; };
 		CE7966791836705500CA69CD /* LineSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSeriesDelegate.h; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				CEBBB5BC16D4FE6B009C9A0C /* first.png */,
 				CEBBB5BE16D4FE6B009C9A0C /* first@2x.png */,
 				CEE74D5716D7AC8700F6DCFB /* screenShotBars.png */,
+				CE51BBE8183A32A100B935B8 /* screenShotLine.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				CEBBB5B116D4FE6B009C9A0C /* Default.png in Resources */,
 				CEBBB5B316D4FE6B009C9A0C /* Default@2x.png in Resources */,
 				CEBBB5B516D4FE6B009C9A0C /* Default-568h@2x.png in Resources */,
+				CE51BBE9183A32A100B935B8 /* screenShotLine.png in Resources */,
 				CEBBB5B816D4FE6B009C9A0C /* MainStoryboard.storyboard in Resources */,
 				CEBBB5BD16D4FE6B009C9A0C /* first.png in Resources */,
 				CEBBB5BF16D4FE6B009C9A0C /* first@2x.png in Resources */,
