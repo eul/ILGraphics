@@ -34,6 +34,8 @@
     [self setupChart];
     
     [self.chartView reloadData];
+
+    NSLog(@"asdfasdf");
 }
 
 - (void)initDelegates

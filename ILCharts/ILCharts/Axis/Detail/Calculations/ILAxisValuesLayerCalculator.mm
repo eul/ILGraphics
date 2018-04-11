@@ -59,13 +59,13 @@
 
     if ( !state.text)
     {
-        state.text = [self.valuesLayer.delegate valuesLayer: self.valuesLayer
+        state.text = [self.valuesLayer.valuesDelegate valuesLayer: self.valuesLayer
                                         textForValueAtIndex: index];
     }
 
     if ( !state.font)
     {
-        state.font = [self.valuesLayer.delegate valuesLayer: self.valuesLayer
+        state.font = [self.valuesLayer.valuesDelegate valuesLayer: self.valuesLayer
                                         fontForValueAtIndex: index];
     }
 
@@ -76,17 +76,17 @@
 - (CGRect)frameForValueAtIndex:(NSUInteger)index
                     valueState:(ILAxisValueState *)state
 {
-    CGPoint position = [self.valuesLayer.delegate valuesLayer: self.valuesLayer
+    CGPoint position = [self.valuesLayer.valuesDelegate valuesLayer: self.valuesLayer
                                       positionForValueAtIndex: index
                                                  withTextSize: state.textSize];
 
     if (position.x < -(MAXFLOAT+1.f) || position.y < -(MAXFLOAT+1))
         return CGRectZero;
     
-    BOOL isVertical = [self.valuesLayer.delegate isAxisVerticalForValuesLayer: self.valuesLayer];
-    BOOL isLeft     = [self.valuesLayer.delegate isAxisLeftForValuesLayer: self.valuesLayer];
+    BOOL isVertical = [self.valuesLayer.valuesDelegate isAxisVerticalForValuesLayer: self.valuesLayer];
+    BOOL isLeft     = [self.valuesLayer.valuesDelegate isAxisLeftForValuesLayer: self.valuesLayer];
     
-    CGFloat valuesRotationAngle = [self.valuesLayer.delegate valueTextRotationAngleInValuesLayer: self.valuesLayer];
+    CGFloat valuesRotationAngle = [self.valuesLayer.valuesDelegate valueTextRotationAngleInValuesLayer: self.valuesLayer];
 
     CGFloat textXGabariteAfterRotation = state.textSize.width * (isVertical
                                                                ? sinf(valuesRotationAngle)
@@ -100,13 +100,13 @@
     {
         CGFloat diff = state.textSize.width - textXGabariteAfterRotation;
 
-        if ( ![self.valuesLayer.delegate canDrawElementWithSize: state.textSize
+        if ( ![self.valuesLayer.valuesDelegate canDrawElementWithSize: state.textSize
                                                         atPoint: CGPointMake(position.x + diff /2.f, position.y)])
         {
             return CGRectZero;
         }
-        if ( ![self.valuesLayer.delegate canDrawElementWithSize: state.textSize
-                                                        atPoint: CGPointMake(position.x + state.textSize.width - diff /2.f, position.y)])
+        if ( ![self.valuesLayer.valuesDelegate canDrawElementWithSize: state.textSize
+                                                              atPoint: CGPointMake(position.x + state.textSize.width - diff /2.f, position.y)])
         {
             return CGRectZero;
         }
@@ -121,13 +121,13 @@
 
         diff = diff > 0.f ? diff : 0.f;
 
-        if ( ![self.valuesLayer.delegate canDrawElementWithSize: state.textSize
-                                                        atPoint: CGPointMake(position.x, position.y - diff)])
+        if ( ![self.valuesLayer.valuesDelegate canDrawElementWithSize: state.textSize
+                                                              atPoint: CGPointMake(position.x, position.y - diff)])
         {
             return CGRectZero;
         }
-        if ( ![self.valuesLayer.delegate canDrawElementWithSize: state.textSize
-                                                        atPoint: CGPointMake(position.x, position.y + diff + state.textSize.height)])
+        if ( ![self.valuesLayer.valuesDelegate canDrawElementWithSize: state.textSize
+                                                              atPoint: CGPointMake(position.x, position.y + diff + state.textSize.height)])
         {
             return CGRectZero;
         }
@@ -140,7 +140,7 @@
     if ( ![self canDrawLabelAtPoint: position withSize: textXGabariteAfterRotation])
         return CGRectZero;
 
-    NSUInteger location = [ self.valuesLayer.delegate isAxisVerticalForValuesLayer: self.valuesLayer ]
+    NSUInteger location = [ self.valuesLayer.valuesDelegate isAxisVerticalForValuesLayer: self.valuesLayer ]
                           ? (NSUInteger)position.y
                           : (NSUInteger)position.x;
 
@@ -164,7 +164,7 @@
     NSUInteger delta = (NSUInteger)(size *0.1f);
     for ( size_t index = 0; index < self->_filledRanges.size(); ++index)
     {
-        NSUInteger location = [ self.valuesLayer.delegate isAxisVerticalForValuesLayer: self.valuesLayer]
+        NSUInteger location = [ self.valuesLayer.valuesDelegate isAxisVerticalForValuesLayer: self.valuesLayer]
                               ? (NSUInteger)point.y
                               : (NSUInteger)point.x;
 

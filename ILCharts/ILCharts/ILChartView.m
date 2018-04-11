@@ -17,7 +17,7 @@
 
 #include <objc/message.h>
 
-#import <JFFUtils/JFFMulticastDelegate.h>
+//#import <JFFUtils/JFFMulticastDelegate.h>
 #import <JFFUI/UIView/UIView+AddSubviewAndScale.h>
 
 @interface ILChartView () <UIScrollViewDelegate, ILInternalChartView>

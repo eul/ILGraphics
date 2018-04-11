@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FAB5B49207E5A08006FF6A7 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAB5B43207E5A07006FF6A7 /* libstdc++.6.0.9.dylib */; };
 		CE3C40131821169A008EF57E /* PieSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3C40121821169A008EF57E /* PieSeriesDelegate.m */; };
 		CE51BBE9183A32A100B935B8 /* screenShotLine.png in Resources */ = {isa = PBXBuildFile; fileRef = CE51BBE8183A32A100B935B8 /* screenShotLine.png */; };
 		CE79667318366EAB00CA69CD /* LineDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79667218366EAB00CA69CD /* LineDemoViewController.m */; };
@@ -32,7 +33,6 @@
 		CEBBB60216D50665009C9A0C /* libJFFUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB5EC16D50646009C9A0C /* libJFFUI.a */; };
 		CEBBB60316D50665009C9A0C /* libJFFUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB5F716D5064D009C9A0C /* libJFFUtils.a */; };
 		CEBBB60516D5068D009C9A0C /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB60416D5068D009C9A0C /* libstdc++.dylib */; };
-		CEBBB60716D507A9009C9A0C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBBB60616D507A8009C9A0C /* libc++.dylib */; };
 		CEBBB60F16D51155009C9A0C /* BarSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB60E16D51155009C9A0C /* BarSeriesDelegate.m */; };
 		CEE74D5216D7A15C00F6DCFB /* VerticalAxisDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE74D5116D7A15C00F6DCFB /* VerticalAxisDelegate.m */; };
 		CEE74D5516D7A4A000F6DCFB /* HorizontalAxisDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE74D5416D7A49F00F6DCFB /* HorizontalAxisDelegate.m */; };
@@ -120,6 +120,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FAB5B43207E5A07006FF6A7 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
+		2FC23A4D207E529600F25B25 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
+		2FC23A59207E539700F25B25 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		CE3C40111821169A008EF57E /* PieSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieSeriesDelegate.h; sourceTree = "<group>"; };
 		CE3C40121821169A008EF57E /* PieSeriesDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieSeriesDelegate.m; sourceTree = "<group>"; };
 		CE51BBE8183A32A100B935B8 /* screenShotLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShotLine.png; sourceTree = "<group>"; };
@@ -170,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBBB60716D507A9009C9A0C /* libc++.dylib in Frameworks */,
+				2FAB5B49207E5A08006FF6A7 /* libstdc++.6.0.9.dylib in Frameworks */,
 				CEBBB60516D5068D009C9A0C /* libstdc++.dylib in Frameworks */,
 				CEBBB60216D50665009C9A0C /* libJFFUI.a in Frameworks */,
 				CEBBB60316D50665009C9A0C /* libJFFUtils.a in Frameworks */,
@@ -205,6 +208,9 @@
 		CEBBB59D16D4FE6B009C9A0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FAB5B43207E5A07006FF6A7 /* libstdc++.6.0.9.dylib */,
+				2FC23A59207E539700F25B25 /* libc++.tbd */,
+				2FC23A4D207E529600F25B25 /* libc++.1.dylib */,
 				CEBBB60616D507A8009C9A0C /* libc++.dylib */,
 				CEBBB60416D5068D009C9A0C /* libstdc++.dylib */,
 				CEBBB5E016D505F1009C9A0C /* QuartzCore.framework */,
@@ -350,6 +356,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = eul;
+				TargetAttributes = {
+					CEBBB59A16D4FE6B009C9A0C = {
+						DevelopmentTeam = LR6XXVU8AC;
+					};
+				};
 			};
 			buildConfigurationList = CEBBB59616D4FE6B009C9A0C /* Build configuration list for PBXProject "ILChartsDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -582,11 +593,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				DEVELOPMENT_TEAM = LR6XXVU8AC;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILChartsDemo/ILChartsDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../ILCharts/;
 				INFOPLIST_FILE = "ILChartsDemo/ILChartsDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -600,11 +614,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				DEVELOPMENT_TEAM = LR6XXVU8AC;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILChartsDemo/ILChartsDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../ILCharts/;
 				INFOPLIST_FILE = "ILChartsDemo/ILChartsDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

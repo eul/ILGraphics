@@ -44,13 +44,15 @@
 
 - (void)updateBarsLayers
 {
-    [self.sublayers enumerateObjectsUsingBlock:^(ILBarLayer *barLayer, NSUInteger index, BOOL *stop)
-    {
+    [self.sublayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger index, BOOL * _Nonnull stop) {
+
+        ILBarLayer *barLayer = (ILBarLayer *)obj;
+
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow: (NSInteger)index inSection: (NSInteger)self.groupIndex];
 
         [barLayer setupWithBarState: [self.barsSeries.calculator stateForBarAtIndexPath: indexPath]
                            animated: self.scrolling ? NO : self->_useAnimation];
-    } ];
+    }];
 }
 
 - (void)updateBarsLayersCount

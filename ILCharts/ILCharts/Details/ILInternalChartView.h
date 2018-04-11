@@ -1,9 +1,9 @@
 #include <CoreGraphics/CoreGraphics.h>
 #import <Foundation/Foundation.h>
+#import <JFFUtils/JFFMulticastDelegate.h>
 
 @class UIView;
 @class UIScrollView;
-@class JFFMulticastDelegate;
 
 @protocol ILChartViewInternalDelegate;
 

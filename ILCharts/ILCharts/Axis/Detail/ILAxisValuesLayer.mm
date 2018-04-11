@@ -61,10 +61,10 @@
 
 - (void)updateValueLayersCount
 {
-    NSUInteger valuesCount = [self.delegate numberOfValuesInValuesLayer: self];
+    NSUInteger valuesCount = [self.valuesDelegate numberOfValuesInValuesLayer: self];
 
-    NSInteger value1 = [self.delegate nearestValueIndexToPoint: CGPointMake(CGRectGetMaxX(self->_visibleRect), CGRectGetMaxY( self->_visibleRect))];
-    NSInteger value2 = [ self.delegate nearestValueIndexToPoint: self->_visibleRect.origin ];
+    NSInteger value1 = [self.valuesDelegate nearestValueIndexToPoint: CGPointMake(CGRectGetMaxX(self->_visibleRect), CGRectGetMaxY( self->_visibleRect))];
+    NSInteger value2 = [ self.valuesDelegate nearestValueIndexToPoint: self->_visibleRect.origin ];
 
     self->_firstVisibleIndex = MIN(value1, value2) - 1;
     self->_lastVisibleIndex  = MAX(value1, value2) + 1;
@@ -105,7 +105,7 @@
 {
     UIGraphicsPushContext(context);
 
-    CGFloat valuesRotationAngle = [self.delegate valueTextRotationAngleInValuesLayer: self];
+    CGFloat valuesRotationAngle = [self.valuesDelegate valueTextRotationAngleInValuesLayer: self];
 
     NSUInteger layerCounter = 0;
     

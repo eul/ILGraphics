@@ -34,14 +34,16 @@
 {
     UIFont *font = [self.series.dataSource fontForValuesTextInValuesSeries: self.series];
 
-    [self.sublayers enumerateObjectsUsingBlock:^(ILValueLayer *valueLayer, NSUInteger index, BOOL *stop)
-    {
-        valueLayer.frame        = [self.calculator frameForValueLayerAtIndex: index];
+    [self.sublayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull layer, NSUInteger idx, BOOL * _Nonnull stop) {
+
+        ILValueLayer *valueLayer = (ILValueLayer *)layer;
+
+        valueLayer.frame        = [self.calculator frameForValueLayerAtIndex: idx];
         valueLayer.textColor    = [UIColor blackColor];
-        valueLayer.text         = [self.series.dataSource valuesSeries: self.series valueTextAtIndex: index];
+        valueLayer.text         = [self.series.dataSource valuesSeries: self.series valueTextAtIndex: idx];
         valueLayer.font         = font;
         valueLayer.showVertical = [self.series.dataSource shouldShowVerticalValuesTextInValuesSeries: self.series];
-    } ];
+    }];
 }
 
 - (void)updateValueLayersCount
