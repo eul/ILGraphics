@@ -635,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBBB4A916D36FFD009C9A0C /* ILLayer.m in Sources */,
 				CE3C40051821104C008EF57E /* ILValuesContainerLayer.m in Sources */,
 				CEBBB48E16D36E26009C9A0C /* ILAxisValuesLayerCalculator.mm in Sources */,
 				CEBBB48F16D36E26009C9A0C /* ILAxisValueState.m in Sources */,
@@ -655,7 +656,6 @@
 				CEBBB49A16D36E26009C9A0C /* ILAxis.m in Sources */,
 				CEBBB4A716D36FFD009C9A0C /* CATextLayerCentered.m in Sources */,
 				CEBBB4A816D36FFD009C9A0C /* ILBarsSeries+Private.m in Sources */,
-				CEBBB4A916D36FFD009C9A0C /* ILLayer.m in Sources */,
 				CEBBB4AA16D36FFD009C9A0C /* ILSeries+ChartLayer.m in Sources */,
 				CEBBB4EC16D3AC1E009C9A0C /* ILChartView.m in Sources */,
 				CEBBB4ED16D3AC1E009C9A0C /* ILBarsSeriesCalculator.mm in Sources */,
@@ -765,7 +765,10 @@
 				DSTROOT = /tmp/ILCharts.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILCharts/ILCharts-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../lib-third-party/";
+				HEADER_SEARCH_PATHS = (
+					"../lib-third-party/",
+					"../ILCharts/**",
+				);
 				OTHER_LDFLAGS = (
 					"-L../lib-third-party",
 					"-all_load",
@@ -781,7 +784,10 @@
 				DSTROOT = /tmp/ILCharts.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILCharts/ILCharts-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../lib-third-party/";
+				HEADER_SEARCH_PATHS = (
+					"../lib-third-party/",
+					"../ILCharts/**",
+				);
 				OTHER_LDFLAGS = (
 					"-L../lib-third-party",
 					"-all_load",

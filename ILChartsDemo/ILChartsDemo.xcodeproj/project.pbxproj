@@ -598,7 +598,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILChartsDemo/ILChartsDemo-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../ILCharts/;
+				HEADER_SEARCH_PATHS = "../ILCharts/**";
 				INFOPLIST_FILE = "ILChartsDemo/ILChartsDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = (
@@ -619,7 +619,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ILChartsDemo/ILChartsDemo-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../ILCharts/;
+				HEADER_SEARCH_PATHS = "../ILCharts/**";
 				INFOPLIST_FILE = "ILChartsDemo/ILChartsDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = (

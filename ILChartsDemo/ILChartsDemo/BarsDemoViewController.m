@@ -10,6 +10,9 @@
 #import <ILCharts/Series/ILValuesSeries.h>
 
 #import <ILCharts/Axis/ILAxis.h>
+#import <ILCharts/Details/ILLayer.h>
+#import <ILCharts/Axis/Detail/ILAxisValuesLayer.h>
+#import <ILCharts/Axis/Detail/ILAxisValueLayer.h>
 
 
 @interface BarsDemoViewController ()
@@ -77,6 +80,7 @@
         
         [self.chartView addAxis: bottomAxis];
     }
+
     // Top Axis
     {
         id< ILAxis > topAxis = [ILAxis new];

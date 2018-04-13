@@ -9,12 +9,12 @@
 
 - (NSString *)axis:(ILAxis *)axis labelTextForPoint:(NSInteger)point
 {
-    NSCalendar *cal = [[NSCalendar alloc ] initWithCalendarIdentifier: NSGregorianCalendar];
+    NSCalendar *cal = [[NSCalendar alloc ] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
     NSDate     *now = [NSDate new];
     
     NSDateComponents *com = [NSDateComponents new];
     
-    [com setWeek: point];
+    [com setWeekOfYear: point];
     
     NSDate *pointDate = [cal dateByAddingComponents: com
                                              toDate: now
@@ -22,7 +22,8 @@
     
     NSDateComponents *result = [cal components: NSYearCalendarUnit | NSWeekOfYearCalendarUnit
                                       fromDate: pointDate];
-    
+
+    NSLog([NSString stringWithFormat: @"W%.02d%'%d", [result weekOfYear], [result year] % 100]);
     return [NSString stringWithFormat: @"W%.02d%'%d", [result weekOfYear], [result year] % 100];
 }
 

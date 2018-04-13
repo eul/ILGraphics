@@ -110,8 +110,9 @@
 - (ILAxisValuesLayer *)createValuesLayer
 {
     ILAxisValuesLayer *layer = [ILAxisValuesLayer new];
-    layer.frame = self.bounds;
-    layer.delegate = self;
+
+    layer.frame          = self.bounds;
+    layer.valuesDelegate = self;
 
     return layer;
 }

@@ -67,7 +67,7 @@
 - (void)addAxis:(id< ILAxis >)axis
 {
     [ILAxisLayer addAxisLayerToChartView: self
-                                     axis: axis];
+                                    axis: axis];
     
     self.contentView.frame = [self getContentViewFrame];
 }
