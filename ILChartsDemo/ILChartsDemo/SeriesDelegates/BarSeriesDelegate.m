@@ -34,7 +34,7 @@
 {
     if ( indexPath.row == 0 )
     {
-        return [ UIColor colorWithRed:202.0 / 256.0 green:96.0 / 256.0 blue:78.0 / 256.0 alpha: 1];
+        return [UIColor colorWithRed:202.0 / 256.0 green:96.0 / 256.0 blue:78.0 / 256.0 alpha: 1];
     }
     else if ( indexPath.row == 1 )
     {
