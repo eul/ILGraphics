@@ -34,14 +34,14 @@
 {
     if ( indexPath.row == 0 )
     {
-        return [ UIColor redColor ];
+        return [ UIColor colorWithRed:202.0 / 256.0 green:96.0 / 256.0 blue:78.0 / 256.0 alpha: 1];
     }
     else if ( indexPath.row == 1 )
     {
-        return [ UIColor greenColor ];
+        return [UIColor whiteColor];
     }
     
-    return [ UIColor blueColor ];
+    return [ UIColor colorWithRed:125.0 / 256.0 green:181.0 / 256.0 blue:221.0 / 256.0 alpha: 1];
 }
 
 - (NSUInteger)maxGroupSizeInBarsSeries:(ILBarsSeries *)series
@@ -71,7 +71,7 @@
 
 - (UIColor *)barsSeries:(ILBarsSeries *)barSeries borderColorForBarAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [UIColor blackColor];
+    return [UIColor grayColor];
 }
 
 - (BOOL)barsSeries:(ILBarsSeries *)barSeries drawGradientForBarAtIndexPath:(NSIndexPath *)indexPath
@@ -85,18 +85,10 @@
     
     if ( !gradient)
     {
-        CGFloat locations[]  = { 0.f, 0.5f, 0.5f, 1.0f };
-        
-        CGFloat red   = 0.f;
-        CGFloat green = 0.f;
-        CGFloat blue  = 0.f;
-        
-        [[UIColor greenColor] getRed: &red green: &green blue: &blue alpha: nil];
-        
-        CGFloat components[ ] = { red * 1.205f, green * 1.239f, blue * 1.239f, 1.0
-            , red, green, blue, 1.0
-            , red * 0.827f, green * 0.828f, blue * 0.836f, 1.0
-            , red * 1.016f, green * 1.030f, blue * 1.015f, 1.0 };
+        CGFloat locations[]  = { 0.f, 1.0f };
+
+        CGFloat components[ ] = { 53.0 / 256.0, 88.0 / 256.0, 208.0 / 256.0, 1.0
+                                , 109.0 / 256.0, 90.0 / 256.0, 247.0 / 256.0, 1.0 };
         
         CGColorSpaceRef rgbColorspace = CGColorSpaceCreateDeviceRGB();
         

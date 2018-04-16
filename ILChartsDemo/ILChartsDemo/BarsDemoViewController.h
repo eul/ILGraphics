@@ -4,6 +4,8 @@
 
 @interface BarsDemoViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
+@property (weak, nonatomic) IBOutlet UIButton *flipButton;
 @property (nonatomic, weak) IBOutlet ILChartView *chartView;
 
 - (IBAction)onFlipBarsOrientation:(id)sender;

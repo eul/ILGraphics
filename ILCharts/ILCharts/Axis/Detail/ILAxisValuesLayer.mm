@@ -121,8 +121,9 @@
         if ( CGRectIsEmpty(frame))
             continue;
 
-        valueLayer.text = valueState.text;
-        valueLayer.font = valueState.font;
+        valueLayer.text          = valueState.text;
+        valueLayer.font          = valueState.font;
+        valueLayer.textColor     = valueState.textColor;
         valueLayer.rotationAngle = valuesRotationAngle;
     }
 

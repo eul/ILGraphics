@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2FAB5B49207E5A08006FF6A7 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAB5B43207E5A07006FF6A7 /* libstdc++.6.0.9.dylib */; };
+		2FAB5B662084D878006FF6A7 /* screenShotBars.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FAB5B652084D878006FF6A7 /* screenShotBars.png */; };
 		CE3C40131821169A008EF57E /* PieSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3C40121821169A008EF57E /* PieSeriesDelegate.m */; };
 		CE51BBE9183A32A100B935B8 /* screenShotLine.png in Resources */ = {isa = PBXBuildFile; fileRef = CE51BBE8183A32A100B935B8 /* screenShotLine.png */; };
 		CE79667318366EAB00CA69CD /* LineDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79667218366EAB00CA69CD /* LineDemoViewController.m */; };
@@ -36,7 +37,6 @@
 		CEBBB60F16D51155009C9A0C /* BarSeriesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBB60E16D51155009C9A0C /* BarSeriesDelegate.m */; };
 		CEE74D5216D7A15C00F6DCFB /* VerticalAxisDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE74D5116D7A15C00F6DCFB /* VerticalAxisDelegate.m */; };
 		CEE74D5516D7A4A000F6DCFB /* HorizontalAxisDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE74D5416D7A49F00F6DCFB /* HorizontalAxisDelegate.m */; };
-		CEE74D5816D7AC8700F6DCFB /* screenShotBars.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE74D5716D7AC8700F6DCFB /* screenShotBars.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +121,7 @@
 
 /* Begin PBXFileReference section */
 		2FAB5B43207E5A07006FF6A7 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
+		2FAB5B652084D878006FF6A7 /* screenShotBars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShotBars.png; sourceTree = "<group>"; };
 		2FC23A4D207E529600F25B25 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
 		2FC23A59207E539700F25B25 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		CE3C40111821169A008EF57E /* PieSeriesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieSeriesDelegate.h; sourceTree = "<group>"; };
@@ -165,7 +166,6 @@
 		CEE74D5116D7A15C00F6DCFB /* VerticalAxisDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalAxisDelegate.m; sourceTree = "<group>"; };
 		CEE74D5316D7A49F00F6DCFB /* HorizontalAxisDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalAxisDelegate.h; sourceTree = "<group>"; };
 		CEE74D5416D7A49F00F6DCFB /* HorizontalAxisDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalAxisDelegate.m; sourceTree = "<group>"; };
-		CEE74D5716D7AC8700F6DCFB /* screenShotBars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShotBars.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,11 +315,11 @@
 		CEE74D5616D7AC8700F6DCFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2FAB5B652084D878006FF6A7 /* screenShotBars.png */,
 				CEBBB5C316D4FE6B009C9A0C /* second.png */,
 				CEBBB5C516D4FE6B009C9A0C /* second@2x.png */,
 				CEBBB5BC16D4FE6B009C9A0C /* first.png */,
 				CEBBB5BE16D4FE6B009C9A0C /* first@2x.png */,
-				CEE74D5716D7AC8700F6DCFB /* screenShotBars.png */,
 				CE51BBE8183A32A100B935B8 /* screenShotLine.png */,
 			);
 			path = Resources;
@@ -462,12 +462,12 @@
 				CEBBB5B316D4FE6B009C9A0C /* Default@2x.png in Resources */,
 				CEBBB5B516D4FE6B009C9A0C /* Default-568h@2x.png in Resources */,
 				CE51BBE9183A32A100B935B8 /* screenShotLine.png in Resources */,
+				2FAB5B662084D878006FF6A7 /* screenShotBars.png in Resources */,
 				CEBBB5B816D4FE6B009C9A0C /* MainStoryboard.storyboard in Resources */,
 				CEBBB5BD16D4FE6B009C9A0C /* first.png in Resources */,
 				CEBBB5BF16D4FE6B009C9A0C /* first@2x.png in Resources */,
 				CEBBB5C416D4FE6B009C9A0C /* second.png in Resources */,
 				CEBBB5C616D4FE6B009C9A0C /* second@2x.png in Resources */,
-				CEE74D5816D7AC8700F6DCFB /* screenShotBars.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

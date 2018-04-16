@@ -36,4 +36,9 @@
     return 0;
 }
 
+- (UIColor *)axis:(ILAxis *)axis colorForLabelAtPoint:(NSInteger)point {
+
+    return [UIColor whiteColor];
+}
+
 @end

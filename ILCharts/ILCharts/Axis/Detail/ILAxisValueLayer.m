@@ -17,6 +17,7 @@
 
             self.text          = other.text;
             self.font          = other.font;
+            self.textColor     = other.textColor;
             self.rotationAngle = other.rotationAngle;
 		}
 	}
@@ -38,6 +39,15 @@
     if ( ![text isEqualToString: self->_text])
     {
         self->_text = text;
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setTextColor:(UIColor *)textColor
+{
+    if ( ![textColor isEqual: self->_textColor])
+    {
+        self->_textColor = textColor;
         [self setNeedsDisplay];
     }
 }
@@ -72,6 +82,8 @@
 - (void)drawInContext:(CGContextRef)context
 {
     UIGraphicsPushContext(context);
+
+    CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), self.textColor.CGColor);
 
     [self.text drawAtPoint: CGPointMake(0.f, 0.f) withFont: self.font];
 

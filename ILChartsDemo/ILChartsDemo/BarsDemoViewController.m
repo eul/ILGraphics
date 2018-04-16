@@ -38,7 +38,7 @@
     
     [self.chartView reloadData];
 
-    NSLog(@"asdfasdf");
+    [self applySkinning];
 }
 
 - (void)initDelegates
@@ -137,6 +137,19 @@
     [_barDelegate.valuesDictonary removeAllObjects];
 
     [self.chartView reloadData];
+}
+
+#pragma mark-
+- (void)applySkinning
+{
+
+    [[_reloadButton layer] setBorderWidth:1.0];
+    [[_reloadButton layer] setBorderColor:[[UIColor whiteColor] CGColor]];
+    [[_reloadButton layer] setCornerRadius:8.0];
+
+    [[_flipButton layer] setBorderWidth:1.0];
+    [[_flipButton layer] setBorderColor:[[UIColor whiteColor] CGColor]];
+    [[_flipButton layer] setCornerRadius:8.0];
 }
 
 @end

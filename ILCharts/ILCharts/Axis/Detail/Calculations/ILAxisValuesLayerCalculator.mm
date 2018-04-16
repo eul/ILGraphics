@@ -69,6 +69,12 @@
                                         fontForValueAtIndex: index];
     }
 
+    if ( !state.textColor)
+    {
+        state.textColor = [self.valuesLayer.valuesDelegate valuesLayer: self.valuesLayer
+                                                  colorForValueAtIndex: index];
+    }
+
     state.frame = [self frameForValueAtIndex: index
                                   valueState: state];
 }
